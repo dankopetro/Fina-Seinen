@@ -1,0 +1,134 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Fina-Ergen Lite",
+  "version": "3.6.0",
+  "identifier": "com.admin.fina-ergen",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Fina Ergen",
+        "label": "main",
+        "width": 1280,
+        "height": 720,
+        "decorations": false,
+        "transparent": true,
+        "fullscreen": false,
+        "resizable": true,
+        "visible": true
+      },
+      {
+        "title": "Fina Messaging Center",
+        "label": "messaging",
+        "width": 1100,
+        "height": 850,
+        "decorations": true,
+        "transparent": false,
+        "visible": false,
+        "url": "/messaging.html",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+      }
+    ],
+    "security": {
+      "csp": null,
+      "dangerousDisableAssetCspModification": true,
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "$APPDATA/*",
+          "$RESOURCE/*",
+          "$CONFIG/*",
+          "$HOME/.config/Fina/*"
+        ]
+      }
+    },
+    "withGlobalTauri": false
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Utility",
+    "publisher": "Danko Petro (Fina Community)",
+    "copyright": "© Fina Open Source Project",
+    "shortDescription": "Fina Ergen AI Assistant",
+    "longDescription": "El Asistente de Voz Modular y Domótico para Linux con procesamiento local offline. Fina es capaz de controlar IoT, automatizar tareas y brindar asistencia guiada por comandos de voz.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/256x256.png",
+      "icons/icon.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "externalBin": [
+      "binaries/brain"
+    ],
+    "resources": [
+      "binaries/piper/**/*",
+      "binaries/piper-x86_64-unknown-linux-gnu",
+      "../main.py",
+      "../fina_api.py",
+      "../utils.py",
+      "../intent_classifier.py",
+      "../plugin_manager.py",
+      "../fina_plugin_integration.py",
+      "../intents-*.json",
+      "../lang.json",
+      "../modismos.json",
+      "../fina_settings.json",
+      "../requirements.txt",
+      "../scripts/**/*",
+      "../iot/**/*",
+      "../plugins/biometria/**/*",
+      "../plugins/system/**/*",
+      "../plugins/web_apps/**/*",
+      "../static/**/*",
+      "../auth/**/*",
+      "../config/contact.json",
+      "../docs/**/*"
+    ],
+    "linux": {
+      "deb": {
+        "depends": [
+          "python3",
+          "python3-venv",
+          "python3-pip",
+          "zenity",
+          "nmap",
+          "adb",
+          "ffmpeg",
+          "libportaudio2",
+          "alsa-utils",
+          "libasound2",
+          "scrcpy",
+          "libvlc5",
+          "xclip",
+          "wl-clipboard",
+          "libfuse2"
+        ]
+      },
+      "rpm": {
+        "depends": [
+          "python3",
+          "python3-pip",
+          "zenity",
+          "nmap",
+          "android-tools",
+          "ffmpeg",
+          "portaudio",
+          "alsa-utils",
+          "vlc",
+          "fuse-libs"
+        ]
+      },
+      "appimage": {
+        "bundleMediaFramework": false
+      }
+    }
+  }
+}

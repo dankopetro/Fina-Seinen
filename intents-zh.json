@@ -1,0 +1,473 @@
+{
+  "scan_iot": [
+    "扫描网络",
+    "查找设备",
+    "物联网扫描"
+  ],
+  "robot_clean": [
+    "扫地",
+    "启动扫地机器人",
+    "清理房屋"
+  ],
+  "lights_on": [
+    "开灯",
+    "打开电灯"
+  ],
+  "lights_off": [
+    "关灯",
+    "全部关闭"
+  ],
+  "lock_door": [
+    "锁门",
+    "把门锁上"
+  ],
+  "unlock_door": [
+    "开门",
+    "打开门锁"
+  ],
+  "check_lock_status": [
+    "门锁好了吗？",
+    "查看门锁状态"
+  ],
+  "start_washing_machine": [
+    "洗衣服",
+    "启动洗衣机"
+  ],
+  "open_blinds": [
+    "打开百叶窗",
+    "拉开窗帘"
+  ],
+  "close_blinds": [
+    "关闭百叶窗",
+    "关上窗帘"
+  ],
+  "start_watering": [
+    "开始浇水",
+    "给植物浇水",
+    "打开灌溉"
+  ],
+  "check_solar_production": [
+    "太阳能发电量",
+    "查看太阳能状态"
+  ],
+  "check_solar_battery": [
+    "太阳能电池状态",
+    "储能电量"
+  ],
+  "fridge_status": [
+    "冰箱状态",
+    "冰箱温度"
+  ],
+  "fridge_inventory": [
+    "冰箱里缺什么？",
+    "生成购物清单"
+  ],
+  "about": [
+    "帮忙 关于fina 一下",
+    "关于fina 请",
+    "我想 关于fina 谢谢",
+    "麻烦 关于fina",
+    "关于fina 一下",
+    "请 关于fina",
+    "关于fina 现在",
+    "我想 关于fina 一下",
+    "帮忙 关于fina 谢谢",
+    "帮忙 关于fina",
+    "我想 关于fina",
+    "请 关于fina 一下",
+    "关于fina 谢谢",
+    "助手 关于fina",
+    "我想 关于fina 请",
+    "帮忙 关于fina 请",
+    "现在 关于fina",
+    "请 关于fina 谢谢",
+    "请 关于fina 请"
+  ],
+  "location_context": [],
+  "ac_control": [
+    "帮忙 空调",
+    "现在 空调",
+    "空调 请",
+    "助手 空调",
+    "空调 一下",
+    "请 空调",
+    "麻烦 空调",
+    "我想 空调 一下",
+    "空调 谢谢",
+    "帮忙 空调 请",
+    "请 空调 一下",
+    "我想 空调 请",
+    "我想 空调",
+    "请 空调 请",
+    "帮忙 空调 谢谢",
+    "请 空调 谢谢",
+    "帮忙 空调 一下",
+    "空调 现在",
+    "我想 空调 谢谢"
+  ],
+  "hangup_doorbell": [],
+  "play_music": [
+    "麻烦 播放音乐",
+    "助手 播放音乐",
+    "我想 播放音乐",
+    "现在 播放音乐",
+    "播放音乐 现在",
+    "请 播放音乐",
+    "帮忙 播放音乐",
+    "帮忙 播放音乐 一下",
+    "播放音乐 谢谢",
+    "请 播放音乐 谢谢",
+    "请 播放音乐 请",
+    "帮忙 播放音乐 请",
+    "请 播放音乐 一下",
+    "我想 播放音乐 请",
+    "播放音乐 一下",
+    "播放音乐 请",
+    "我想 播放音乐 一下",
+    "我想 播放音乐 谢谢",
+    "帮忙 播放音乐 谢谢"
+  ],
+  "stop_music": [
+    "帮忙 停止音乐",
+    "帮忙 停止音乐 一下",
+    "我想 停止音乐",
+    "停止音乐 一下",
+    "现在 停止音乐",
+    "我想 停止音乐 请",
+    "请 停止音乐 一下",
+    "助手 停止音乐",
+    "停止音乐 谢谢",
+    "请 停止音乐",
+    "麻烦 停止音乐",
+    "帮忙 停止音乐 谢谢",
+    "停止音乐 现在",
+    "请 停止音乐 谢谢",
+    "帮忙 停止音乐 请",
+    "我想 停止音乐 一下",
+    "我想 停止音乐 谢谢",
+    "停止音乐 请",
+    "请 停止音乐 请"
+  ],
+  "pause_music": [],
+  "next_track": [],
+  "music_volume_down": [
+    "我想 music volume down 谢谢"
+  ],
+  "music_volume_up": [
+    "我想 music volume up 一下"
+  ],
+  "shutdown": [
+    "帮忙 关闭电脑 谢谢",
+    "请 关闭电脑 谢谢",
+    "我想 关闭电脑 一下",
+    "关闭电脑 请",
+    "关闭电脑 谢谢",
+    "助手 关闭电脑",
+    "麻烦 关闭电脑",
+    "我想 关闭电脑",
+    "请 关闭电脑 一下",
+    "帮忙 关闭电脑",
+    "请 关闭电脑",
+    "我想 关闭电脑 请",
+    "现在 关闭电脑",
+    "请 关闭电脑 请",
+    "我想 关闭电脑 谢谢",
+    "关闭电脑 一下",
+    "帮忙 关闭电脑 一下",
+    "关闭电脑 现在",
+    "帮忙 关闭电脑 请"
+  ],
+  "restart_pc": [],
+  "exit_fina": [
+    "再见 一下",
+    "再见 现在",
+    "帮忙 再见",
+    "再见 请",
+    "现在 再见",
+    "请 再见 一下",
+    "助手 再见",
+    "再见 谢谢",
+    "帮忙 再见 一下",
+    "我想 再见 谢谢",
+    "麻烦 再见",
+    "请 再见 谢谢",
+    "请 再见",
+    "帮忙 再见 谢谢",
+    "我想 再见 请",
+    "我想 再见",
+    "我想 再见 一下",
+    "请 再见 请",
+    "帮忙 再见 请"
+  ],
+  "suspend": [
+    "suspend 请"
+  ],
+  "sleep": [
+    "请 sleep"
+  ],
+  "wake_up": [
+    "助手 醒醒",
+    "请 醒醒",
+    "帮忙 醒醒",
+    "我想 醒醒",
+    "帮忙 醒醒 请",
+    "现在 醒醒",
+    "麻烦 醒醒",
+    "我想 醒醒 一下",
+    "醒醒 一下",
+    "请 醒醒 请",
+    "我想 醒醒 请",
+    "我想 醒醒 谢谢",
+    "醒醒 请",
+    "请 醒醒 谢谢",
+    "醒醒 现在",
+    "帮忙 醒醒 一下",
+    "醒醒 谢谢",
+    "帮忙 醒醒 谢谢",
+    "请 醒醒 一下"
+  ],
+  "read_email": [],
+  "send_email": [],
+  "web_search": [],
+  "get_weather": [
+    "我想 天气 一下",
+    "助手 天气",
+    "请 天气",
+    "我想 天气",
+    "现在 天气",
+    "帮忙 天气",
+    "我想 天气 请",
+    "麻烦 天气",
+    "天气 谢谢",
+    "我想 天气 谢谢",
+    "请 天气 一下",
+    "帮忙 天气 请",
+    "请 天气 请",
+    "帮忙 天气 一下",
+    "天气 现在",
+    "天气 一下",
+    "请 天气 谢谢",
+    "帮忙 天气 谢谢",
+    "天气 请"
+  ],
+  "weather_tomorrow": [],
+  "when_will_rain": [],
+  "yes": [
+    "麻烦 yes"
+  ],
+  "change_wallpaper": [],
+  "add_reminder": [],
+  "list_reminders": [],
+  "news": [
+    "news 一下"
+  ],
+  "take_screenshot": [],
+  "increase_volume": [
+    "帮忙 increase volume"
+  ],
+  "decrease_volume": [
+    "请 decrease volume"
+  ],
+  "battery_status": [],
+  "wiki_summary": [],
+  "get_ip": [],
+  "get_stats": [],
+  "translate": [],
+  "start_timer": [],
+  "joke": [
+    "我想 joke"
+  ],
+  "create_note": [],
+  "increase_brightness": [],
+  "decrease_brightness": [],
+  "current_datetime": [
+    "麻烦 current datetime"
+  ],
+  "youtube_search": [
+    "助手 youtube search"
+  ],
+  "find_file": [
+    "麻烦 find file"
+  ],
+  "clipboard": [
+    "我想 clipboard 谢谢"
+  ],
+  "convert_currency": [
+    "麻烦 convert currency"
+  ],
+  "generate_image": [
+    "请 generate image"
+  ],
+  "delete_notes": [
+    "帮忙 delete notes"
+  ],
+  "read_pdf": [
+    "麻烦 read pdf"
+  ],
+  "update_assistant": [
+    "帮忙 update assistant"
+  ],
+  "greeting": [
+    "麻烦 greeting"
+  ],
+  "uptime": [
+    "助手 uptime"
+  ],
+  "port_scan": [
+    "帮忙 port scan 谢谢"
+  ],
+  "public_ip": [
+    "请 public ip 请"
+  ],
+  "wifi_scan": [
+    "我想 wifi scan 请"
+  ],
+  "save_voice_note": [
+    "帮忙 save voice note 一下"
+  ],
+  "motivation": [
+    "助手 motivation"
+  ],
+  "battery_saver": [
+    "请 battery saver 请"
+  ],
+  "play_ambient": [
+    "播放放松的音乐",
+    "播放雨声",
+    "大自然的声音",
+    "森林的声音",
+    "海浪声",
+    "禅宗音乐",
+    "播放白噪音 谢谢"
+  ],
+  "take_photo": [
+    "助手 take photo"
+  ],
+  "backup_files": [
+    "我想 backup files"
+  ],
+  "download_instagram": [
+    "麻烦 download instagram"
+  ],
+  "toggle_night_mode": [
+    "现在 toggle night mode"
+  ],
+  "change_voice": [
+    "change voice 一下"
+  ],
+  "open_spotify": [
+    "帮忙 open spotify"
+  ],
+  "open_app": [
+    "现在 open app"
+  ],
+  "open_audio_editor": [
+    "open audio editor 请"
+  ],
+  "close_app": [
+    "帮忙 close app"
+  ],
+  "turn_on_tv": [
+    "请 turn on tv 谢谢"
+  ],
+  "turn_off_tv": [
+    "我想 turn off tv 谢谢"
+  ],
+  "tv_mute": [
+    "我想 tv mute 一下"
+  ],
+  "tv_unmute": [
+    "tv unmute 现在"
+  ],
+  "tv_volume_up": [
+    "我想 tv volume up"
+  ],
+  "tv_volume_down": [
+    "帮忙 tv volume down 谢谢"
+  ],
+  "tv_channel_up": [
+    "请 tv channel up"
+  ],
+  "tv_channel_down": [
+    "tv channel down 现在"
+  ],
+  "tv_open_app": [
+    "tv open app 一下"
+  ],
+  "tv_exit_app": [
+    "助手 tv exit app"
+  ],
+  "tv_set_input": [
+    "助手 tv set input"
+  ],
+  "check_doorbell": [
+    "帮忙 check doorbell 请"
+  ],
+  "show_doorbell_camera": [
+    "帮忙 show doorbell camera 请"
+  ],
+  "show_doorbell_stream": [
+    "我想 show doorbell stream 一下"
+  ],
+  "tv_set_channel": [
+    "我想 tv set channel 请"
+  ],
+  "tv_set_volume": [
+    "tv set volume 谢谢"
+  ],
+  "tv_increase_brightness": [],
+  "tv_decrease_brightness": [],
+  "lights_increase_brightness": [],
+  "lights_decrease_brightness": [],
+  "send_message": [
+    "请 send message 请"
+  ],
+  "make_call": [
+    "我想 make call 谢谢"
+  ],
+  "tv_on": [
+    "帮忙 tv on"
+  ],
+  "tv_off": [
+    "tv off 请"
+  ],
+  "turn_on_deco": [
+    "请 turn on deco 谢谢"
+  ],
+  "turn_off_deco": [
+    "我想 turn off deco 谢谢"
+  ],
+  "deco_volume_up": [
+    "我想 deco volume up"
+  ],
+  "deco_volume_down": [
+    "帮忙 deco volume down 谢谢"
+  ],
+  "deco_mute": [
+    "我想 deco mute 一下"
+  ],
+  "deco_unmute": [
+    "deco unmute 现在"
+  ],
+  "deco_channel_up": [
+    "请 deco channel up"
+  ],
+  "deco_channel_down": [
+    "deco channel down 现在"
+  ],
+  "deco_set_channel": [
+    "我想 deco set channel 请"
+  ],
+  "deco_set_volume": [
+    "deco set volume 谢谢"
+  ],
+  "deco_open_app": [
+    "deco open app 一下"
+  ],
+  "deco_exit_app": [
+    "助手 deco exit app"
+  ],
+  "deco_set_input": [
+    "助手 deco set input"
+  ]
+}

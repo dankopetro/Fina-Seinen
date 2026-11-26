@@ -1,0 +1,98 @@
+name: Release
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  release:
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ubuntu-24.04]
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf libjavascriptcoregtk-4.1-dev libsoup-3.0-dev rpm libfuse2
+
+      - name: Install frontend dependencies
+        run: npm install
+
+      - name: Download Piper Binary (Sidecar)
+        run: |
+          mkdir -p src-tauri/binaries
+          if [ ! -d src-tauri/binaries/piper ]; then
+            wget -O piper.tar.gz https://github.com/rhasspy/piper/releases/download/v1.2.0/piper_amd64.tar.gz
+            tar -xzf piper.tar.gz
+            cp -r piper src-tauri/binaries/
+            chmod +x src-tauri/binaries/piper/piper
+            rm -rf piper piper.tar.gz
+          fi
+
+      - uses: tauri-apps/tauri-action@v0.5.15
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APPIMAGE_EXTRACT_AND_RUN: 1
+        with:
+          tagName: v__VERSION__
+          releaseName: "Fina Ergen v__VERSION__"
+          releaseBody: |
+            ### 🚀 Fina Ergen v__VERSION__
+            
+            Esta actualización marca un salto importante en la madurez del asistente, con un enfoque en la expansión domótica universal y la modularidad del mercado de plugins.
+            
+            - **📊 Monitor de Hábitat:** Nueva visualización de consumo energético mensual y soporte para electrodomésticos inteligentes.
+            - **🧠 Inteligencia Adaptativa:** El motor ahora puede aprender modismos regionales y comandos personalizados en tiempo de ejecución.
+            - **📦 Instalación Simplificada:** Instala nuevos plugins directamente desde archivos ZIP locales a través de la interfaz.
+            - **🌐 Core i18n:** Traducciones completas a 7 idiomas para el ecosistema Zero-Config.
+            
+            ---
+            *Consultar `docs/release_notes_v3_6_0.md` para el desglose detallado de esta versión.*
+          releaseDraft: false
+          prerelease: false
+          args: --bundles deb,rpm
+
+      - name: Build Patched AppImage (from Deb)
+        run: |
+          wget -q "https://github.com/AppImage/appimagekit/releases/download/continuous/appimagetool-x86_64.AppImage"
+          chmod +x appimagetool-x86_64.AppImage
+
+          APP_DIR=src-tauri/target/release/bundle/appimage/fina-ergen.AppDir
+          VERSION=$(node -p "require('./package.json').version")
+
+          echo "🔧 Extrayendo DEB para bypass de linuxdeploy..."
+          mkdir -p "$APP_DIR"
+          dpkg-deb -x src-tauri/target/release/bundle/deb/fina-ergen_${VERSION}_amd64.deb "$APP_DIR"
+
+          echo "🔧 Construyendo estructura AppDir manual..."
+          cd "$APP_DIR"
+          ln -s usr/share/applications/fina-ergen.desktop fina-ergen.desktop
+          ln -s usr/share/icons/hicolor/512x512/apps/fina-ergen.png fina-ergen.png
+          ln -s fina-ergen.png .DirIcon
+
+          # Crear AppRun symlink a usr/bin/fina-ergen
+          ln -s usr/bin/fina-ergen AppRun
+          chmod +x AppRun
+          cd ../../../../../../
+
+          echo "📦 Generando AppImage Patched (XZ)..."
+          APPIMAGE_EXTRACT_AND_RUN=1 ARCH=x86_64 ./appimagetool-x86_64.AppImage --no-appstream --comp xz "$APP_DIR" fina-ergen-patched.AppImage
+
+          echo "📤 Subiendo AppImage Patcheada..."
+          GH_TOKEN=${{ secrets.GITHUB_TOKEN }} gh release upload "v${VERSION}" fina-ergen-patched.AppImage#"fina-ergen_${VERSION}_patched_amd64.AppImage" --clobber

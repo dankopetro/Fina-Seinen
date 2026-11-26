@@ -1,0 +1,403 @@
+{
+  "scan_iot": [
+    "escanear rede",
+    "procurar dispositivos"
+  ],
+  "robot_clean": [
+    "aspirar o chão",
+    "limpar a casa",
+    "ligar robô aspirador"
+  ],
+  "lights_on": [
+    "acender as luzes",
+    "ligar a luz"
+  ],
+  "lights_off": [
+    "apagar as luzes",
+    "desligar tudo"
+  ],
+  "lock_door": [
+    "trancar a porta",
+    "fechar com chave"
+  ],
+  "unlock_door": [
+    "abrir a porta",
+    "destrancar porta"
+  ],
+  "check_lock_status": [
+    "a porta está trancada?",
+    "status da fechadura"
+  ],
+  "start_washing_machine": [
+    "lavar roupa",
+    "iniciar máquina de lavar"
+  ],
+  "open_blinds": [
+    "abrir as persianas",
+    "subir as cortinas"
+  ],
+  "close_blinds": [
+    "fechar as persianas",
+    "baixar as cortinas"
+  ],
+  "start_watering": [
+    "regar o jardim",
+    "ligar irrigação"
+  ],
+  "check_solar_production": [
+    "produção solar",
+    "quanto estamos gerando?"
+  ],
+  "check_solar_battery": [
+    "status da bateria solar",
+    "carga da bateria"
+  ],
+  "fridge_status": [
+    "status da geladeira",
+    "temperatura da geladeira"
+  ],
+  "fridge_inventory": [
+    "o que falta na geladeira?",
+    "fazer lista de compras"
+  ],
+  "about": [
+    "quién te creó"
+  ],
+  "location_context": [
+    "dormitorio"
+  ],
+  "ac_control": [
+    "apaga el aire"
+  ],
+  "hangup_doorbell": [
+    "cuelga el timbre"
+  ],
+  "play_music": [
+    "¿Puedes reproducir música?"
+  ],
+  "stop_music": [
+    "Silenciar el audio"
+  ],
+  "pause_music": [
+    "pause"
+  ],
+  "next_track": [
+    "siguiente canción"
+  ],
+  "music_volume_down": [
+    "bajá el volumen del reproductor"
+  ],
+  "music_volume_up": [
+    "subí el volumen del reproductor"
+  ],
+  "shutdown": [
+    "apagar el sistema computarizado"
+  ],
+  "restart_pc": [
+    "reiniciar el sistema"
+  ],
+  "exit_fina": [
+    "descansá",
+    "descansa",
+    "ponete a dormir"
+  ],
+  "suspend": [
+    "computer in energiesparmodus"
+  ],
+  "sleep": [
+    "duerme ahora"
+  ],
+  "wake_up": [
+    "Fina"
+  ],
+  "read_email": [
+    "revisar mi correo electrónico"
+  ],
+  "send_email": [
+    "enviar un correo electrónico"
+  ],
+  "web_search": [
+    "búsquelo"
+  ],
+  "get_weather": [
+    "cómo está el clima"
+  ],
+  "weather_tomorrow": [
+    "cómo estará el tiempo mañana"
+  ],
+  "when_will_rain": [
+    "cuándo va a llover"
+  ],
+  "yes": [
+    "vale"
+  ],
+  "change_wallpaper": [
+    "establecer un nuevo fondo"
+  ],
+  "add_reminder": [
+    "recordarme"
+  ],
+  "list_reminders": [
+    "cuáles son mis recordatorios"
+  ],
+  "news": [
+    "cuáles son las noticias"
+  ],
+  "take_screenshot": [
+    "fais une capture d'écran",
+    "capture l'écran"
+  ],
+  "increase_volume": [
+    "subir el volumen"
+  ],
+  "decrease_volume": [
+    "bajar el volumen"
+  ],
+  "battery_status": [
+    "cuánta batería queda"
+  ],
+  "wiki_summary": [
+    "qué es"
+  ],
+  "get_ip": [
+    "cuál es mi IP"
+  ],
+  "get_stats": [
+    "estadísticas del sistema"
+  ],
+  "translate": [
+    "traducir esto"
+  ],
+  "start_timer": [
+    "avísame en"
+  ],
+  "joke": [
+    "cuéntame un chiste"
+  ],
+  "create_note": [
+    "crear una nota"
+  ],
+  "increase_brightness": [
+    "aumentar el brillo"
+  ],
+  "decrease_brightness": [
+    "disminuir el brillo"
+  ],
+  "current_datetime": [
+    "qué hora es"
+  ],
+  "youtube_search": [
+    "reproducir en youtube"
+  ],
+  "find_file": [
+    "buscar un archivo"
+  ],
+  "clipboard": [
+    "leer el portapapeles"
+  ],
+  "convert_currency": [
+    "convertir moneda"
+  ],
+  "generate_image": [
+    "generar una imagen"
+  ],
+  "delete_notes": [
+    "borrar todas las notas"
+  ],
+  "read_pdf": [
+    "leer un PDF"
+  ],
+  "update_assistant": [
+    "actualízate"
+  ],
+  "greeting": [
+    "buenos días"
+  ],
+  "uptime": [
+    "cuánto tiempo ha estado encendido el sistema"
+  ],
+  "port_scan": [
+    "escanear puertos"
+  ],
+  "public_ip": [
+    "cuál es mi IP pública"
+  ],
+  "wifi_scan": [
+    "buscar wifi"
+  ],
+  "save_voice_note": [
+    "guarda este pensamiento"
+  ],
+  "motivation": [
+    "dame motivación"
+  ],
+  "battery_saver": [
+    "optimizar batería"
+  ],
+  "play_ambient": [
+    "tocar música relaxante",
+    "sons de chuva",
+    "sons de floresta",
+    "sons da natureza",
+    "ondas do mar",
+    "música zen",
+    "ruído branco para mim",
+    "sonido ambiental"
+  ],
+  "take_photo": [
+    "tomar mi foto"
+  ],
+  "backup_files": [
+    "copiar archivos importantes"
+  ],
+  "download_instagram": [
+    "guardar este carrete"
+  ],
+  "toggle_night_mode": [
+    "activar modo nocturno"
+  ],
+  "change_voice": [
+    "cambiar voz"
+  ],
+  "open_spotify": [
+    "abre Spotify"
+  ],
+  "open_app": [
+    "abrir aplicación"
+  ],
+  "open_audio_editor": [
+    "abre Audacity"
+  ],
+  "close_app": [
+    "cerrar aplicación"
+  ],
+  "turn_on_tv": [
+    "ligar a televisão",
+    "liga a tv",
+    "ativar televisor",
+    "ligar o televisor",
+    "ligar a tv",
+    "quero ver televisão"
+  ],
+  "turn_off_tv": [
+    "desligar a televisão",
+    "desliga a tv",
+    "desligar o televisor",
+    "apaga a tv",
+    "apagar a televisão"
+  ],
+  "tv_mute": [
+    "silenciar a televisão",
+    "mudo na tv",
+    "tirar o som da tv",
+    "silêncio na tv",
+    "coloque no mudo"
+  ],
+  "tv_unmute": [
+    "ativar som da tv",
+    "tirar o mudo",
+    "voltar o som",
+    "tirar o silêncio",
+    "reativar som",
+    "quero ouvir a tv"
+  ],
+  "tv_volume_up": [
+    "aumentar o volume da televisão",
+    "aumentar volume tv",
+    "subir o volume",
+    "mais volume na tv",
+    "aumenta o som"
+  ],
+  "tv_volume_down": [
+    "baixar o volume da televisão",
+    "diminuir volume tv",
+    "baixar o volume",
+    "menos volume na tv",
+    "abaixa o som"
+  ],
+  "tv_channel_up": [
+    "siguiente canal"
+  ],
+  "tv_channel_down": [
+    "canal anterior"
+  ],
+  "tv_open_app": [
+    "abrir app tv"
+  ],
+  "tv_exit_app": [
+    "volver a ver televisión"
+  ],
+  "tv_set_input": [
+    "pon el hdmi 1"
+  ],
+  "check_doorbell": [
+    "cómo está el timbre"
+  ],
+  "show_doorbell_camera": [
+    "ver foto del timbre"
+  ],
+  "show_doorbell_stream": [
+    "ver video del timbre"
+  ],
+  "tv_set_channel": [
+    "pon el canal"
+  ],
+  "tv_set_volume": [
+    "pon el volumen en"
+  ],
+  "tv_increase_brightness": [
+    "aumentar el brillo del televisor"
+  ],
+  "tv_decrease_brightness": [
+    "atenuar el televisor"
+  ],
+  "lights_increase_brightness": [
+    "iluminar el proyector"
+  ],
+  "lights_decrease_brightness": [
+    "atenuar las luces"
+  ],
+  "send_message": [
+    "enviar un whatsapp"
+  ],
+  "make_call": [
+    "llama a"
+  ],
+  "tv_on": [
+    "tv on"
+  ],
+  "tv_off": [
+    "tv off"
+  ],
+  "turn_on_deco": [
+    "enciende el deco"
+  ],
+  "turn_off_deco": [
+    "apagá el deco"
+  ],
+  "deco_set_channel": [
+    "pon el canal"
+  ],
+  "deco_volume_up": [
+    "sube el volumen del deco"
+  ],
+  "deco_volume_down": [
+    "bajá el volumen del deco"
+  ],
+  "deco_mute": [
+    "quitar sonido deco"
+  ],
+  "deco_unmute": [
+    "activar sonido deco"
+  ],
+  "deco_channel_up": [],
+  "deco_channel_down": [],
+  "deco_set_volume": [],
+  "deco_open_app": [
+    "abrir app deco"
+  ],
+  "deco_exit_app": [
+    "volver a ver decovisión"
+  ],
+  "deco_set_input": []
+}

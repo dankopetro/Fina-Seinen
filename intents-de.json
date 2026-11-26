@@ -1,0 +1,715 @@
+{
+  "scan_iot": [
+    "netzwerk scannen",
+    "geräte suchen",
+    "wer ist verbunden",
+    "iot scan"
+  ],
+  "robot_clean": [
+    "staubsaugen",
+    "reinigungsroboter starten",
+    "putz den boden"
+  ],
+  "lights_on": [
+    "licht an",
+    "licht einschalten",
+    "lampe einschalten"
+  ],
+  "lights_off": [
+    "licht aus",
+    "alles ausschalten",
+    "licht ausschalten"
+  ],
+  "lock_door": [
+    "tür abschließen",
+    "zusperren",
+    "haus sichern"
+  ],
+  "unlock_door": [
+    "tür aufschließen",
+    "tür öffnen"
+  ],
+  "check_lock_status": [
+    "ist die tür zu?",
+    "türstatus prüfen"
+  ],
+  "start_washing_machine": [
+    "waschmaschine starten",
+    "wäsche waschen"
+  ],
+  "open_blinds": [
+    "rollladen öffnen",
+    "jalousien hoch",
+    "fenster öffnen"
+  ],
+  "close_blinds": [
+    "rollladen schließen",
+    "jalousien runter",
+    "fenster schließen"
+  ],
+  "start_watering": [
+    "garten bewässern",
+    "bewässerung starten",
+    "pflanzen gießen"
+  ],
+  "check_solar_production": [
+    "solarproduktion prüfen",
+    "wie viel solarstrom?"
+  ],
+  "check_solar_battery": [
+    "solarbatterie status",
+    "batteriespeicher prüfen"
+  ],
+  "fridge_status": [
+    "kühlschrank status",
+    "kühlschrank temperatur"
+  ],
+  "fridge_inventory": [
+    "was fehlt im kühlschrank?",
+    "einkaufsliste erstellen"
+  ],
+  "about": [
+    "kannst du über fina für mich",
+    "über fina jetzt",
+    "system über fina",
+    "kannst du über fina",
+    "könntest du über fina",
+    "bitte über fina",
+    "kannst du über fina jetzt",
+    "bitte über fina für mich",
+    "bitte über fina bitte",
+    "assistent über fina",
+    "über fina danke",
+    "ich möchte über fina für mich",
+    "über fina bitte",
+    "ich möchte über fina",
+    "jetzt über fina",
+    "bitte über fina jetzt",
+    "über fina für mich",
+    "ich möchte über fina bitte",
+    "kannst du über fina bitte",
+    "ich möchte über fina jetzt"
+  ],
+  "location_context": [],
+  "ac_control": [
+    "assistent klimaanlage",
+    "jetzt klimaanlage",
+    "bitte klimaanlage für mich",
+    "klimaanlage danke",
+    "bitte klimaanlage jetzt",
+    "klimaanlage bitte",
+    "kannst du klimaanlage",
+    "ich möchte klimaanlage für mich",
+    "bitte klimaanlage",
+    "ich möchte klimaanlage",
+    "ich möchte klimaanlage jetzt",
+    "kannst du klimaanlage bitte",
+    "kannst du klimaanlage für mich",
+    "könntest du klimaanlage",
+    "bitte klimaanlage bitte",
+    "klimaanlage jetzt",
+    "klimaanlage für mich",
+    "kannst du klimaanlage jetzt",
+    "ich möchte klimaanlage bitte",
+    "system klimaanlage"
+  ],
+  "hangup_doorbell": [],
+  "play_music": [
+    "kannst du musik spielen bitte",
+    "ich möchte musik spielen",
+    "könntest du musik spielen",
+    "ich möchte musik spielen für mich",
+    "bitte musik spielen",
+    "assistent musik spielen",
+    "musik spielen danke",
+    "jetzt musik spielen",
+    "kannst du musik spielen",
+    "system musik spielen",
+    "musik spielen jetzt",
+    "bitte musik spielen jetzt",
+    "kannst du musik spielen für mich",
+    "ich möchte musik spielen bitte",
+    "musik spielen für mich",
+    "bitte musik spielen für mich",
+    "musik spielen bitte",
+    "ich möchte musik spielen jetzt",
+    "bitte musik spielen bitte",
+    "kannst du musik spielen jetzt"
+  ],
+  "stop_music": [
+    "ich möchte musik stoppen",
+    "assistent musik stoppen",
+    "bitte musik stoppen bitte",
+    "jetzt musik stoppen",
+    "könntest du musik stoppen",
+    "musik stoppen danke",
+    "system musik stoppen",
+    "kannst du musik stoppen",
+    "bitte musik stoppen für mich",
+    "kannst du musik stoppen bitte",
+    "bitte musik stoppen",
+    "ich möchte musik stoppen bitte",
+    "musik stoppen für mich",
+    "ich möchte musik stoppen jetzt",
+    "kannst du musik stoppen für mich",
+    "musik stoppen jetzt",
+    "kannst du musik stoppen jetzt",
+    "musik stoppen bitte",
+    "bitte musik stoppen jetzt",
+    "ich möchte musik stoppen für mich"
+  ],
+  "pause_music": [],
+  "next_track": [],
+  "music_volume_down": [
+    "könntest du music volume down"
+  ],
+  "music_volume_up": [
+    "könntest du music volume up"
+  ],
+  "shutdown": [
+    "bitte computer ausschalten jetzt",
+    "ich möchte computer ausschalten bitte",
+    "kannst du computer ausschalten für mich",
+    "kannst du computer ausschalten bitte",
+    "ich möchte computer ausschalten",
+    "bitte computer ausschalten",
+    "bitte computer ausschalten für mich",
+    "computer ausschalten für mich",
+    "assistent computer ausschalten",
+    "kannst du computer ausschalten jetzt",
+    "könntest du computer ausschalten",
+    "bitte computer ausschalten bitte",
+    "computer ausschalten danke",
+    "system computer ausschalten",
+    "kannst du computer ausschalten",
+    "computer ausschalten jetzt",
+    "ich möchte computer ausschalten für mich",
+    "jetzt computer ausschalten",
+    "ich möchte computer ausschalten jetzt",
+    "computer ausschalten bitte"
+  ],
+  "restart_pc": [],
+  "exit_fina": [
+    "kannst du auf wiedersehen für mich",
+    "bitte auf wiedersehen",
+    "auf wiedersehen für mich",
+    "auf wiedersehen jetzt",
+    "auf wiedersehen bitte",
+    "ich möchte auf wiedersehen jetzt",
+    "assistent auf wiedersehen",
+    "ich möchte auf wiedersehen",
+    "kannst du auf wiedersehen jetzt",
+    "ich möchte auf wiedersehen für mich",
+    "könntest du auf wiedersehen",
+    "kannst du auf wiedersehen",
+    "bitte auf wiedersehen bitte",
+    "system auf wiedersehen",
+    "bitte auf wiedersehen jetzt",
+    "jetzt auf wiedersehen",
+    "kannst du auf wiedersehen bitte",
+    "auf wiedersehen danke",
+    "ich möchte auf wiedersehen bitte",
+    "bitte auf wiedersehen für mich"
+  ],
+  "suspend": [
+    "könntest du suspend"
+  ],
+  "sleep": [
+    "ich möchte sleep"
+  ],
+  "wake_up": [
+    "jetzt wach auf",
+    "könntest du wach auf",
+    "ich möchte wach auf",
+    "kannst du wach auf",
+    "bitte wach auf",
+    "assistent wach auf",
+    "wach auf für mich",
+    "system wach auf",
+    "ich möchte wach auf bitte",
+    "wach auf danke",
+    "wach auf bitte",
+    "ich möchte wach auf jetzt",
+    "kannst du wach auf für mich",
+    "ich möchte wach auf für mich",
+    "kannst du wach auf bitte",
+    "bitte wach auf jetzt",
+    "bitte wach auf bitte",
+    "kannst du wach auf jetzt",
+    "bitte wach auf für mich",
+    "wach auf jetzt"
+  ],
+  "read_email": [],
+  "send_email": [],
+  "web_search": [],
+  "get_weather": [
+    "system wetter",
+    "ich möchte wetter für mich",
+    "assistent wetter",
+    "kannst du wetter",
+    "könntest du wetter",
+    "jetzt wetter",
+    "bitte wetter",
+    "bitte wetter bitte",
+    "bitte wetter jetzt",
+    "ich möchte wetter",
+    "kannst du wetter bitte",
+    "bitte wetter für mich",
+    "wetter jetzt",
+    "kannst du wetter für mich",
+    "kannst du wetter jetzt",
+    "wetter danke",
+    "wetter für mich",
+    "ich möchte wetter jetzt",
+    "wetter bitte",
+    "ich möchte wetter bitte"
+  ],
+  "weather_tomorrow": [],
+  "when_will_rain": [],
+  "yes": [
+    "jetzt yes"
+  ],
+  "change_wallpaper": [],
+  "add_reminder": [],
+  "list_reminders": [],
+  "news": [
+    "jetzt news"
+  ],
+  "take_screenshot": [],
+  "increase_volume": [
+    "bitte increase volume"
+  ],
+  "decrease_volume": [
+    "assistent decrease volume"
+  ],
+  "battery_status": [],
+  "wiki_summary": [],
+  "get_ip": [],
+  "get_stats": [],
+  "translate": [],
+  "start_timer": [],
+  "joke": [
+    "kannst du joke jetzt"
+  ],
+  "create_note": [],
+  "increase_brightness": [],
+  "decrease_brightness": [],
+  "current_datetime": [
+    "assistent current datetime"
+  ],
+  "youtube_search": [
+    "kannst du youtube search"
+  ],
+  "find_file": [
+    "kannst du find file"
+  ],
+  "clipboard": [
+    "bitte clipboard"
+  ],
+  "convert_currency": [
+    "bitte convert currency"
+  ],
+  "generate_image": [
+    "assistent generate image"
+  ],
+  "delete_notes": [
+    "kannst du delete notes für mich"
+  ],
+  "read_pdf": [
+    "bitte read pdf"
+  ],
+  "update_assistant": [
+    "jetzt update assistant"
+  ],
+  "greeting": [
+    "assistent greeting"
+  ],
+  "uptime": [
+    "system uptime"
+  ],
+  "port_scan": [
+    "könntest du port scan"
+  ],
+  "public_ip": [
+    "public ip jetzt"
+  ],
+  "wifi_scan": [
+    "bitte wifi scan jetzt"
+  ],
+  "save_voice_note": [
+    "kannst du save voice note"
+  ],
+  "motivation": [
+    "bitte motivation für mich"
+  ],
+  "battery_saver": [
+    "bitte battery saver"
+  ],
+  "play_ambient": [
+    "Entspannungsmusik abspielen",
+    "Regengeräusche",
+    "Waldgeräusche",
+    "Naturgeräusche",
+    "Ozeanwellen",
+    "Zen-Musik",
+    "Weißes Rauschen für mich"
+  ],
+  "take_photo": [
+    "könntest du take photo"
+  ],
+  "backup_files": [
+    "könntest du backup files"
+  ],
+  "download_instagram": [
+    "jetzt download instagram"
+  ],
+  "toggle_night_mode": [
+    "toggle night mode bitte"
+  ],
+  "change_voice": [
+    "jetzt change voice"
+  ],
+  "open_spotify": [
+    "bitte open spotify bitte"
+  ],
+  "open_app": [
+    "kannst du open app jetzt"
+  ],
+  "open_audio_editor": [
+    "open audio editor jetzt"
+  ],
+  "close_app": [
+    "ich möchte close app"
+  ],
+  "turn_on_tv": [
+    "kannst du turn on tv jetzt"
+  ],
+  "turn_off_tv": [
+    "ich möchte turn off tv für mich"
+  ],
+  "tv_mute": [
+    "ich möchte tv mute für mich"
+  ],
+  "tv_unmute": [
+    "ich möchte tv unmute für mich"
+  ],
+  "tv_volume_up": [
+    "könntest du tv volume up"
+  ],
+  "tv_volume_down": [
+    "kannst du tv volume down bitte"
+  ],
+  "tv_channel_up": [
+    "kannst du tv channel up"
+  ],
+  "tv_channel_down": [
+    "kannst du tv channel down bitte"
+  ],
+  "tv_open_app": [
+    "kannst du tv open app"
+  ],
+  "tv_exit_app": [
+    "tv exit app bitte"
+  ],
+  "tv_set_input": [
+    "kannst du tv set input"
+  ],
+  "check_doorbell": [
+    "ich möchte check doorbell für mich"
+  ],
+  "show_doorbell_camera": [
+    "ich möchte show doorbell camera bitte"
+  ],
+  "show_doorbell_stream": [
+    "jetzt show doorbell stream"
+  ],
+  "tv_set_channel": [
+    "kannst du tv set channel für mich"
+  ],
+  "tv_set_volume": [
+    "bitte tv set volume für mich"
+  ],
+  "tv_increase_brightness": [],
+  "tv_decrease_brightness": [],
+  "lights_increase_brightness": [],
+  "lights_decrease_brightness": [],
+  "send_message": [
+    "send message bitte"
+  ],
+  "make_call": [
+    "bitte make call"
+  ],
+  "tv_on": [
+    "tv on für mich"
+  ],
+  "tv_off": [
+    "bitte tv off jetzt"
+  ],
+  "turn_on_deco": [
+    "kannst du turn on Dekoder jetzt",
+    "turn on Dekoder bitte",
+    "ich möchte turn on Dekoder bitte",
+    "jetzt turn on Dekoder",
+    "assistent turn on Dekoder",
+    "bitte turn on Dekoder für mich",
+    "ich möchte turn on Dekoder jetzt",
+    "kannst du turn on Dekoder für mich",
+    "bitte turn on Dekoder bitte",
+    "könntest du turn on Dekoder",
+    "bitte turn on Dekoder jetzt",
+    "turn on Dekoder für mich",
+    "system turn on Dekoder",
+    "kannst du turn on Dekoder",
+    "ich möchte turn on Dekoder für mich",
+    "turn on Dekoder danke",
+    "bitte turn on Dekoder",
+    "ich möchte turn on Dekoder",
+    "turn on Dekoder jetzt",
+    "kannst du turn on Dekoder bitte"
+  ],
+  "turn_off_deco": [
+    "ich möchte turn off Dekoder für mich",
+    "ich möchte turn off Dekoder",
+    "turn off Dekoder jetzt",
+    "ich möchte turn off Dekoder jetzt",
+    "turn off Dekoder für mich",
+    "kannst du turn off Dekoder bitte",
+    "turn off Dekoder bitte",
+    "jetzt turn off Dekoder",
+    "kannst du turn off Dekoder für mich",
+    "system turn off Dekoder",
+    "ich möchte turn off Dekoder bitte",
+    "bitte turn off Dekoder jetzt",
+    "kannst du turn off Dekoder",
+    "turn off Dekoder danke",
+    "bitte turn off Dekoder für mich",
+    "kannst du turn off Dekoder jetzt",
+    "bitte turn off Dekoder bitte",
+    "bitte turn off Dekoder",
+    "assistent turn off Dekoder",
+    "könntest du turn off Dekoder"
+  ],
+  "deco_volume_up": [
+    "könntest du Dekoder volume up",
+    "ich möchte Dekoder volume up jetzt",
+    "assistent Dekoder volume up",
+    "kannst du Dekoder volume up",
+    "ich möchte Dekoder volume up bitte",
+    "system Dekoder volume up",
+    "ich möchte Dekoder volume up",
+    "Dekoder volume up danke",
+    "kannst du Dekoder volume up bitte",
+    "bitte Dekoder volume up",
+    "Dekoder volume up jetzt",
+    "ich möchte Dekoder volume up für mich",
+    "kannst du Dekoder volume up für mich",
+    "bitte Dekoder volume up für mich",
+    "Dekoder volume up bitte",
+    "kannst du Dekoder volume up jetzt",
+    "bitte Dekoder volume up jetzt",
+    "bitte Dekoder volume up bitte",
+    "jetzt Dekoder volume up",
+    "Dekoder volume up für mich"
+  ],
+  "deco_volume_down": [
+    "kannst du Dekoder volume down bitte",
+    "Dekoder volume down danke",
+    "kannst du Dekoder volume down für mich",
+    "bitte Dekoder volume down jetzt",
+    "kannst du Dekoder volume down jetzt",
+    "ich möchte Dekoder volume down bitte",
+    "system Dekoder volume down",
+    "assistent Dekoder volume down",
+    "Dekoder volume down jetzt",
+    "kannst du Dekoder volume down",
+    "bitte Dekoder volume down",
+    "bitte Dekoder volume down für mich",
+    "ich möchte Dekoder volume down",
+    "ich möchte Dekoder volume down für mich",
+    "könntest du Dekoder volume down",
+    "jetzt Dekoder volume down",
+    "Dekoder volume down bitte",
+    "bitte Dekoder volume down bitte",
+    "ich möchte Dekoder volume down jetzt",
+    "Dekoder volume down für mich"
+  ],
+  "deco_mute": [
+    "ich möchte Dekoder mute für mich",
+    "kannst du Dekoder mute für mich",
+    "kannst du Dekoder mute jetzt",
+    "bitte Dekoder mute jetzt",
+    "könntest du Dekoder mute",
+    "kannst du Dekoder mute bitte",
+    "system Dekoder mute",
+    "Dekoder mute danke",
+    "ich möchte Dekoder mute",
+    "ich möchte Dekoder mute bitte",
+    "bitte Dekoder mute",
+    "bitte Dekoder mute bitte",
+    "Dekoder mute für mich",
+    "ich möchte Dekoder mute jetzt",
+    "kannst du Dekoder mute",
+    "bitte Dekoder mute für mich",
+    "Dekoder mute bitte",
+    "jetzt Dekoder mute",
+    "assistent Dekoder mute",
+    "Dekoder mute jetzt"
+  ],
+  "deco_unmute": [
+    "ich möchte Dekoder unmute für mich",
+    "Dekoder unmute für mich",
+    "system Dekoder unmute",
+    "ich möchte Dekoder unmute jetzt",
+    "ich möchte Dekoder unmute",
+    "Dekoder unmute jetzt",
+    "bitte Dekoder unmute für mich",
+    "könntest du Dekoder unmute",
+    "Dekoder unmute danke",
+    "bitte Dekoder unmute jetzt",
+    "kannst du Dekoder unmute",
+    "assistent Dekoder unmute",
+    "kannst du Dekoder unmute bitte",
+    "ich möchte Dekoder unmute bitte",
+    "bitte Dekoder unmute",
+    "Dekoder unmute bitte",
+    "kannst du Dekoder unmute jetzt",
+    "kannst du Dekoder unmute für mich",
+    "jetzt Dekoder unmute",
+    "bitte Dekoder unmute bitte"
+  ],
+  "deco_channel_up": [
+    "kannst du Dekoder channel up",
+    "Dekoder channel up jetzt",
+    "assistent Dekoder channel up",
+    "Dekoder channel up bitte",
+    "ich möchte Dekoder channel up",
+    "Dekoder channel up danke",
+    "ich möchte Dekoder channel up bitte",
+    "jetzt Dekoder channel up",
+    "ich möchte Dekoder channel up jetzt",
+    "Dekoder channel up für mich",
+    "bitte Dekoder channel up für mich",
+    "bitte Dekoder channel up bitte",
+    "bitte Dekoder channel up jetzt",
+    "ich möchte Dekoder channel up für mich",
+    "kannst du Dekoder channel up für mich",
+    "kannst du Dekoder channel up jetzt",
+    "könntest du Dekoder channel up",
+    "system Dekoder channel up",
+    "bitte Dekoder channel up",
+    "kannst du Dekoder channel up bitte"
+  ],
+  "deco_channel_down": [
+    "kannst du Dekoder channel down bitte",
+    "bitte Dekoder channel down",
+    "ich möchte Dekoder channel down jetzt",
+    "system Dekoder channel down",
+    "kannst du Dekoder channel down für mich",
+    "kannst du Dekoder channel down jetzt",
+    "kannst du Dekoder channel down",
+    "ich möchte Dekoder channel down für mich",
+    "Dekoder channel down für mich",
+    "ich möchte Dekoder channel down bitte",
+    "assistent Dekoder channel down",
+    "Dekoder channel down jetzt",
+    "bitte Dekoder channel down jetzt",
+    "jetzt Dekoder channel down",
+    "ich möchte Dekoder channel down",
+    "Dekoder channel down bitte",
+    "Dekoder channel down danke",
+    "bitte Dekoder channel down bitte",
+    "könntest du Dekoder channel down",
+    "bitte Dekoder channel down für mich"
+  ],
+  "deco_set_channel": [
+    "kannst du Dekoder set channel für mich",
+    "ich möchte Dekoder set channel jetzt",
+    "kannst du Dekoder set channel",
+    "kannst du Dekoder set channel jetzt",
+    "ich möchte Dekoder set channel bitte",
+    "Dekoder set channel für mich",
+    "ich möchte Dekoder set channel für mich",
+    "bitte Dekoder set channel jetzt",
+    "könntest du Dekoder set channel",
+    "Dekoder set channel jetzt",
+    "bitte Dekoder set channel",
+    "ich möchte Dekoder set channel",
+    "kannst du Dekoder set channel bitte",
+    "Dekoder set channel bitte",
+    "bitte Dekoder set channel bitte",
+    "Dekoder set channel danke",
+    "assistent Dekoder set channel",
+    "jetzt Dekoder set channel",
+    "bitte Dekoder set channel für mich",
+    "system Dekoder set channel"
+  ],
+  "deco_set_volume": [
+    "bitte Dekoder set volume für mich",
+    "system Dekoder set volume",
+    "ich möchte Dekoder set volume",
+    "Dekoder set volume jetzt",
+    "bitte Dekoder set volume",
+    "jetzt Dekoder set volume",
+    "Dekoder set volume bitte",
+    "kannst du Dekoder set volume bitte",
+    "kannst du Dekoder set volume für mich",
+    "kannst du Dekoder set volume",
+    "kannst du Dekoder set volume jetzt",
+    "assistent Dekoder set volume",
+    "Dekoder set volume für mich",
+    "könntest du Dekoder set volume",
+    "Dekoder set volume danke",
+    "ich möchte Dekoder set volume jetzt",
+    "ich möchte Dekoder set volume bitte",
+    "bitte Dekoder set volume jetzt",
+    "bitte Dekoder set volume bitte",
+    "ich möchte Dekoder set volume für mich"
+  ],
+  "deco_open_app": [
+    "kannst du Dekoder open app"
+  ],
+  "deco_exit_app": [
+    "Dekoder exit app bitte",
+    "bitte Dekoder exit app für mich",
+    "jetzt Dekoder exit app",
+    "Dekoder exit app für mich",
+    "ich möchte Dekoder exit app",
+    "kannst du Dekoder exit app jetzt",
+    "system Dekoder exit app",
+    "assistent Dekoder exit app",
+    "könntest du Dekoder exit app",
+    "ich möchte Dekoder exit app bitte",
+    "bitte Dekoder exit app jetzt",
+    "ich möchte Dekoder exit app jetzt",
+    "kannst du Dekoder exit app",
+    "Dekoder exit app jetzt",
+    "Dekoder exit app danke",
+    "ich möchte Dekoder exit app für mich",
+    "bitte Dekoder exit app bitte",
+    "bitte Dekoder exit app",
+    "kannst du Dekoder exit app für mich",
+    "kannst du Dekoder exit app bitte"
+  ],
+  "deco_set_input": [
+    "kannst du Dekoder set input",
+    "Dekoder set input danke",
+    "system Dekoder set input",
+    "Dekoder set input bitte",
+    "ich möchte Dekoder set input",
+    "bitte Dekoder set input",
+    "jetzt Dekoder set input",
+    "bitte Dekoder set input jetzt",
+    "Dekoder set input jetzt",
+    "assistent Dekoder set input",
+    "ich möchte Dekoder set input jetzt",
+    "kannst du Dekoder set input jetzt",
+    "Dekoder set input für mich",
+    "kannst du Dekoder set input bitte",
+    "ich möchte Dekoder set input bitte",
+    "ich möchte Dekoder set input für mich",
+    "könntest du Dekoder set input",
+    "kannst du Dekoder set input für mich",
+    "bitte Dekoder set input für mich",
+    "bitte Dekoder set input bitte"
+  ]
+}

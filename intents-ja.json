@@ -1,0 +1,464 @@
+{
+  "scan_iot": [
+    "ネットワークをスキャン",
+    "デバイスを探して"
+  ],
+  "robot_clean": [
+    "掃除して",
+    "掃除ロボットを開始",
+    "床を拭いて"
+  ],
+  "lights_on": [
+    "電気をつけて",
+    "ライトをオン"
+  ],
+  "lights_off": [
+    "電気を消して",
+    "全部オフ"
+  ],
+  "lock_door": [
+    "鍵を閉めて",
+    "ドアをロック"
+  ],
+  "unlock_door": [
+    "鍵を開けて",
+    "ドアを解錠"
+  ],
+  "check_lock_status": [
+    "鍵は閉まってる？",
+    "ドアの状態"
+  ],
+  "start_washing_machine": [
+    "洗濯機を回して",
+    "洗濯を開始"
+  ],
+  "open_blinds": [
+    "カーテンを開けて",
+    "ブラインドを開けて"
+  ],
+  "close_blinds": [
+    "カーテンを閉めて",
+    "ブラインドを閉めて"
+  ],
+  "start_watering": [
+    "水やりを開始",
+    "庭に水をまいて"
+  ],
+  "check_solar_production": [
+    "太陽光発電の状況",
+    "発電量は？"
+  ],
+  "check_solar_battery": [
+    "蓄電池の状態",
+    "ソーラーバッテリー"
+  ],
+  "fridge_status": [
+    "冷蔵庫の状態",
+    "冷蔵庫の温度"
+  ],
+  "fridge_inventory": [
+    "冷蔵庫に何が足りない？",
+    "買い物リストを作って"
+  ],
+  "about": [
+    "して フィナについて",
+    "今すぐ フィナについて",
+    "お願いします フィナについて",
+    "お願いします フィナについて てね",
+    "して フィナについて てね",
+    "ください フィナについて てください",
+    "して フィナについて てください",
+    "フィナについて てちょうだい",
+    "フィナについて て",
+    "ください フィナについて てね",
+    "ください フィナについて て",
+    "お願いします フィナについて てください",
+    "フィナについて てください",
+    "アシスタント フィナについて",
+    "フィナについて てね",
+    "して フィナについて て",
+    "お願いします フィナについて て",
+    "ください フィナについて"
+  ],
+  "location_context": [],
+  "ac_control": [
+    "して エアコン てね",
+    "お願いします エアコン",
+    "お願いします エアコン てください",
+    "お願いします エアコン て",
+    "アシスタント エアコン",
+    "今すぐ エアコン",
+    "ください エアコン",
+    "エアコン てね",
+    "エアコン てちょうだい",
+    "エアコン てください",
+    "して エアコン て",
+    "お願いします エアコン てね",
+    "ください エアコン てください",
+    "して エアコン てください",
+    "ください エアコン てね",
+    "して エアコン",
+    "エアコン て",
+    "ください エアコン て"
+  ],
+  "hangup_doorbell": [],
+  "play_music": [
+    "して 音楽を再生",
+    "ください 音楽を再生 てね",
+    "アシスタント 音楽を再生",
+    "お願いします 音楽を再生",
+    "今すぐ 音楽を再生",
+    "ください 音楽を再生",
+    "して 音楽を再生 てください",
+    "ください 音楽を再生 てください",
+    "音楽を再生 てね",
+    "お願いします 音楽を再生 てね",
+    "して 音楽を再生 て",
+    "音楽を再生 て",
+    "音楽を再生 てちょうだい",
+    "ください 音楽を再生 て",
+    "お願いします 音楽を再生 て",
+    "して 音楽を再生 てね",
+    "お願いします 音楽を再生 てください",
+    "音楽を再生 てください"
+  ],
+  "stop_music": [
+    "お願いします 音楽を止める",
+    "今すぐ 音楽を止める",
+    "して 音楽を止める",
+    "ください 音楽を止める",
+    "して 音楽を止める てね",
+    "アシスタント 音楽を止める",
+    "お願いします 音楽を止める て",
+    "ください 音楽を止める て",
+    "して 音楽を止める て",
+    "音楽を止める てね",
+    "ください 音楽を止める てね",
+    "お願いします 音楽を止める てください",
+    "音楽を止める てください",
+    "お願いします 音楽を止める てね",
+    "音楽を止める て",
+    "音楽を止める てちょうだい",
+    "ください 音楽を止める てください",
+    "して 音楽を止める てください"
+  ],
+  "pause_music": [],
+  "next_track": [],
+  "music_volume_down": [
+    "お願いします music volume down て"
+  ],
+  "music_volume_up": [
+    "して music volume up てください"
+  ],
+  "shutdown": [
+    "して パソコン終了 てください",
+    "パソコン終了 てください",
+    "パソコン終了 てちょうだい",
+    "して パソコン終了 て",
+    "お願いします パソコン終了 て",
+    "して パソコン終了",
+    "ください パソコン終了 てね",
+    "お願いします パソコン終了 てください",
+    "アシスタント パソコン終了",
+    "して パソコン終了 てね",
+    "パソコン終了 てね",
+    "お願いします パソコン終了",
+    "ください パソコン終了 てください",
+    "お願いします パソコン終了 てね",
+    "パソコン終了 て",
+    "ください パソコン終了",
+    "今すぐ パソコン終了",
+    "ください パソコン終了 て"
+  ],
+  "restart_pc": [],
+  "exit_fina": [
+    "ください さようなら て",
+    "ください さようなら てね",
+    "お願いします さようなら て",
+    "して さようなら て",
+    "して さようなら てください",
+    "お願いします さようなら",
+    "さようなら て",
+    "さようなら てください",
+    "さようなら てちょうだい",
+    "お願いします さようなら てください",
+    "して さようなら",
+    "お願いします さようなら てね",
+    "して さようなら てね",
+    "ください さようなら",
+    "さようなら てね",
+    "ください さようなら てください",
+    "アシスタント さようなら",
+    "今すぐ さようなら"
+  ],
+  "suspend": [
+    "ください suspend"
+  ],
+  "sleep": [
+    "お願いします sleep"
+  ],
+  "wake_up": [
+    "アシスタント 起きて",
+    "して 起きて て",
+    "して 起きて てください",
+    "して 起きて",
+    "起きて てちょうだい",
+    "ください 起きて",
+    "お願いします 起きて",
+    "お願いします 起きて てください",
+    "今すぐ 起きて",
+    "お願いします 起きて てね",
+    "ください 起きて てね",
+    "して 起きて てね",
+    "起きて てください",
+    "ください 起きて て",
+    "起きて てね",
+    "お願いします 起きて て",
+    "ください 起きて てください",
+    "起きて て"
+  ],
+  "read_email": [],
+  "send_email": [],
+  "web_search": [],
+  "get_weather": [
+    "天気 てください",
+    "アシスタント 天気",
+    "ください 天気",
+    "して 天気",
+    "今すぐ 天気",
+    "お願いします 天気",
+    "天気 てね",
+    "ください 天気 て",
+    "して 天気 てね",
+    "して 天気 てください",
+    "お願いします 天気 て",
+    "天気 てちょうだい",
+    "ください 天気 てください",
+    "ください 天気 てね",
+    "して 天気 て",
+    "お願いします 天気 てください",
+    "お願いします 天気 てね",
+    "天気 て"
+  ],
+  "weather_tomorrow": [],
+  "when_will_rain": [],
+  "yes": [
+    "して yes てね"
+  ],
+  "change_wallpaper": [],
+  "add_reminder": [],
+  "list_reminders": [],
+  "news": [
+    "ください news"
+  ],
+  "take_screenshot": [],
+  "increase_volume": [
+    "お願いします increase volume"
+  ],
+  "decrease_volume": [
+    "して decrease volume"
+  ],
+  "battery_status": [],
+  "wiki_summary": [],
+  "get_ip": [],
+  "get_stats": [],
+  "translate": [],
+  "start_timer": [],
+  "joke": [
+    "ください joke てね"
+  ],
+  "create_note": [],
+  "increase_brightness": [],
+  "decrease_brightness": [],
+  "current_datetime": [
+    "お願いします current datetime"
+  ],
+  "youtube_search": [
+    "アシスタント youtube search"
+  ],
+  "find_file": [
+    "今すぐ find file"
+  ],
+  "clipboard": [
+    "clipboard てください"
+  ],
+  "convert_currency": [
+    "今すぐ convert currency"
+  ],
+  "generate_image": [
+    "して generate image"
+  ],
+  "delete_notes": [
+    "アシスタント delete notes"
+  ],
+  "read_pdf": [
+    "アシスタント read pdf"
+  ],
+  "update_assistant": [
+    "アシスタント update assistant"
+  ],
+  "greeting": [
+    "アシスタント greeting"
+  ],
+  "uptime": [
+    "して uptime"
+  ],
+  "port_scan": [
+    "して port scan てください"
+  ],
+  "public_ip": [
+    "ください public ip てね"
+  ],
+  "wifi_scan": [
+    "ください wifi scan てね"
+  ],
+  "save_voice_note": [
+    "して save voice note てね"
+  ],
+  "motivation": [
+    "ください motivation"
+  ],
+  "battery_saver": [
+    "して battery saver てください"
+  ],
+  "play_ambient": [
+    "リラックスできる音楽を再生して",
+    "雨の音を流して",
+    "森の音",
+    "自然の音",
+    "波の音",
+    "禅の音楽",
+    "ホワイトノイズを再生して",
+    "お願いします play ambient"
+  ],
+  "take_photo": [
+    "今すぐ take photo"
+  ],
+  "backup_files": [
+    "お願いします backup files"
+  ],
+  "download_instagram": [
+    "ください download instagram てください"
+  ],
+  "toggle_night_mode": [
+    "ください toggle night mode"
+  ],
+  "change_voice": [
+    "アシスタント change voice"
+  ],
+  "open_spotify": [
+    "アシスタント open spotify"
+  ],
+  "open_app": [
+    "今すぐ open app"
+  ],
+  "open_audio_editor": [
+    "open audio editor てください"
+  ],
+  "close_app": [
+    "close app てください"
+  ],
+  "turn_on_tv": [
+    "ください turn on tv てね"
+  ],
+  "turn_off_tv": [
+    "turn off tv てね"
+  ],
+  "tv_mute": [
+    "お願いします tv mute"
+  ],
+  "tv_unmute": [
+    "tv unmute てね"
+  ],
+  "tv_volume_up": [
+    "tv volume up て"
+  ],
+  "tv_volume_down": [
+    "ください tv volume down"
+  ],
+  "tv_channel_up": [
+    "ください tv channel up てね"
+  ],
+  "tv_channel_down": [
+    "tv channel down て"
+  ],
+  "tv_open_app": [
+    "アシスタント tv open app"
+  ],
+  "tv_exit_app": [
+    "お願いします tv exit app"
+  ],
+  "tv_set_input": [
+    "アシスタント tv set input"
+  ],
+  "check_doorbell": [
+    "アシスタント check doorbell"
+  ],
+  "show_doorbell_camera": [
+    "アシスタント show doorbell camera"
+  ],
+  "show_doorbell_stream": [
+    "ください show doorbell stream てね"
+  ],
+  "tv_set_channel": [
+    "ください tv set channel て"
+  ],
+  "tv_set_volume": [
+    "tv set volume てね"
+  ],
+  "tv_increase_brightness": [],
+  "tv_decrease_brightness": [],
+  "lights_increase_brightness": [],
+  "lights_decrease_brightness": [],
+  "send_message": [
+    "して send message て"
+  ],
+  "make_call": [
+    "お願いします make call てね"
+  ],
+  "tv_on": [
+    "今すぐ tv on"
+  ],
+  "tv_off": [
+    "お願いします tv off"
+  ],
+  "turn_on_deco": [
+    "ください turn on deco てね"
+  ],
+  "turn_off_deco": [
+    "turn off deco てね"
+  ],
+  "deco_volume_up": [
+    "deco volume up て"
+  ],
+  "deco_volume_down": [
+    "ください deco volume down"
+  ],
+  "deco_mute": [
+    "お願いします deco mute"
+  ],
+  "deco_unmute": [
+    "deco unmute てね"
+  ],
+  "deco_channel_up": [
+    "ください deco channel up てね"
+  ],
+  "deco_channel_down": [
+    "deco channel down て"
+  ],
+  "deco_set_channel": [
+    "ください deco set channel て"
+  ],
+  "deco_set_volume": [
+    "deco set volume てね"
+  ],
+  "deco_open_app": [
+    "アシスタント deco open app"
+  ],
+  "deco_exit_app": [
+    "お願いします deco exit app"
+  ],
+  "deco_set_input": [
+    "アシスタント deco set input"
+  ]
+}
