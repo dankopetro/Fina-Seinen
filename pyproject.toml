@@ -9,15 +9,13 @@ requires-python = ">=3.12"
 # Dependencias principales (convertidas de requirements.txt)
 # Nota: se han mantenido las mismas versiones que el proyecto original; después de crear el entorno con uv podrás ajustarlas.
 dependencies = [
-    "torch>=2.0.0",
-    "sentence-transformers",
+    "sentence-transformers[onnx]",
     "transformers",
     "scikit-learn",
     "numpy",
     "vosk",
-    "openai-whisper",
+    "whispercpp",
     "deep-translator",
-    "resemblyzer",
     "face-recognition",
     "sounddevice",
     "soundfile",
@@ -57,6 +55,7 @@ dependencies = [
     "uvicorn",
     "yt-dlp",
     "markdown2",
+    "onnxruntime"
 ]
 
 [build-system]
