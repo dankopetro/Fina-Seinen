@@ -75,3 +75,65 @@ El sistema corre dividido en tres capas coordinadas:
 - **Descarga modular por idioma y perfil:** El `.deb`/`.AppImage` base debe ser liviano; los modelos de voz/STT/SLM se descargan solo según perfil + idioma del usuario, con verificación y limpieza de obsoletos.
 - **Compatibilidad total hacia atrás:** Preservar `detect_intent(text, confidence_threshold)` -> `(intent, confidence)`, API `:18000`, UDP `:13333`, esquema `~/.config/Fina/` y fallback de autenticación por contraseña/huella.
 - **Verificación real en baseline:** Todo cambio estructural debe medirse en `danko@192.168.0.200` (RSS RAM, %CPU en `idle`, latencia fin-de-voz -> audio TTS, y tamaño total en disco).
+
+## 5. GitHub Actions — CI y Release
+
+### 5.1 CI (`ci.yml`) — Integración Continua
+
+Se dispara en cada `push` a `main` o Pull Request. **No genera instaladores**: solo verifica la calidad del código Python.
+
+| Paso | Qué hace |
+|---|---|
+| Set up Python 3.12 | Runtime estándar del proyecto |
+| Install uv | Gestor de dependencias rápido |
+| `rm -rf .venv && uv sync --frozen --extra dev` | Elimina el venv previo (evita `File exists`), instala deps + grupo `dev` (ruff, mypy) desde el lockfile |
+| `ruff check . --exit-zero` | Reporta errores de estilo/calidad pero **no falla el CI** (hay deuda técnica pendiente en `utils.py` etc.) |
+| `mypy . --ignore-missing-imports \|\| true` | Verifica tipos sin bloquear el pipeline |
+
+> **Nota:** `--exit-zero` y `|| true` son temporales. Cuando el código Python esté más limpio (ver deuda técnica en §3), quitarlos para que el CI sea estricto.
+
+**Problemas conocidos resueltos:**
+- `.venv` era un symlink trackeado en git → removido del índice con `git rm --cached .venv`.
+- `ruff` y `mypy` no estaban declarados → agregados en `pyproject.toml` bajo `[project.optional-dependencies] dev`.
+
+---
+
+### 5.2 Release (`release.yml`) — Publicación de instaladores
+
+Se dispara al crear un tag `v*` (ej: `git tag v0.1.10 && git push origin v0.1.10`) o manualmente desde GitHub Actions.
+
+**Estrategia: CERO `linuxdeploy`** — Tauri compila solo el `.deb`; el AppImage se construye manualmente extrayendo ese `.deb`.
+
+| Paso | Qué hace |
+|---|---|
+| Install system deps | `libgtk-3-dev`, `libwebkit2gtk-4.1-dev`, `libfuse2`, `patchelf`, etc. |
+| Install frontend deps | `npm install` |
+| Download Piper binary | Descarga `piper_amd64.tar.gz` v1.2.0 a `src-tauri/binaries/piper/` |
+| `npm run tauri:deb` | Compila Rust + Vue y empaqueta **solo el `.deb`** (`--bundles deb`, sin `linuxdeploy`) |
+| Extract deb → AppDir | `dpkg-deb -x *.deb $APPDIR` + `chmod 755 $APPDIR` + `AppRun`, `.desktop`, icono |
+| `appimagetool` (zstd) | Descarga `appimagetool-x86_64.AppImage` de AppImageKit y genera el AppImage con compresión **zstd** (xz no soportado en la versión actual) |
+| Upload to Release | `softprops/action-gh-release@v2` sube el `.deb` y el `_patched_amd64.AppImage` |
+
+**Script npm `tauri:deb` en `package.json`:**
+```json
+"tauri:deb": "tauri build --bundles deb"
+```
+
+**Lecciones aprendidas (errores resueltos):**
+| Error | Causa | Solución |
+|---|---|---|
+| `failed to run linuxdeploy` | `tauri-action` con `--bundles deb,appimage` | Usar `npm run tauri:deb` directo (sin `tauri-action` para el build) |
+| `File exists (.venv)` | `.venv` era symlink trackeado en git | `git rm --cached .venv` + agregar `.venv` a `.gitignore` |
+| `fatal: No url found for submodule docs/Fina-Ergen.wiki` | Gitlink roto en el índice | `git rm --cached docs/Fina-Ergen.wiki` |
+| `AppDir mode 0700` | `mktemp -d` crea con permisos restrictivos | `chmod 755 "$APPDIR"` inmediatamente después |
+| `Compressor "xz" is not supported` | `appimagetool` moderno solo trae `zstd` | Quitar `--comp xz`; dejar compresión por defecto |
+
+**Para crear un nuevo release:**
+```bash
+git tag v0.X.Y
+git push origin v0.X.Y
+```
+Esto genera automáticamente en GitHub Releases:
+- `Fina Seinen_vX.Y_amd64.deb`
+- `Fina-Seinen_vX.Y_patched_amd64.AppImage`
+
