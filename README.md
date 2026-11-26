@@ -48,6 +48,22 @@ Fina está dividida en un núcleo de IA liviano y una potente de capa externa co
 <a id="instalacion"></a>
 ## 🚀 Instalación (Universal)
 
+### Instalación rápida con uv
+
+```bash
+# 1️⃣ Crear/activar el entorno virtual (usamos el .venv compartido o uno nuevo)
+python -m venv .venv
+source .venv/bin/activate
+
+# 2️⃣ Instalar uv (solo la primera vez)
+pip install uv
+
+# 3️⃣ Instalar todas las dependencias bloqueadas
+uv sync
+```
+
+Esta secuencia usa el `pyproject.toml` y `uv.lock` para reproducir exactamente el mismo entorno en cualquier máquina.
+
 A partir de la versión v3.5.4, Fina Ergen es 100% modular y autodependiente. Ya no necesitas clonar el código fuente. Dirígete a la pestaña de **Releases** en GitHub y descarga el instalador que mejor se adapte a tu distribución Linux:
 
 ### 1. Instaladores Nativos (Ubuntu / Debian / Fedora)
