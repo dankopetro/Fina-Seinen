@@ -54,6 +54,7 @@ jobs:
           echo "Deb found: $DEB_PATH"
 
           APPDIR=$(mktemp -d)
+          chmod 755 "$APPDIR"
           dpkg-deb -x "$DEB_PATH" "$APPDIR"
 
           cat <<'EOF' > "$APPDIR/AppRun"
