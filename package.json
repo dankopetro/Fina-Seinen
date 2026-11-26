@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
         "tauri": "tauri",
-    "tauri:deb": "tauri build -- --bundles deb"
+    "tauri:deb": "tauri build --bundles deb"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.10.1",

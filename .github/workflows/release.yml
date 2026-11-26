@@ -21,29 +21,16 @@ jobs:
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
 
-      # -------------------------------------------------
-      # DEPENDENCIAS PARA APPIMAGE (solo para crear AppImage manualmente)
-      # -------------------------------------------------
-      - name: Install system deps (AppImage)
+      - name: Install system deps
         run: |
           sudo apt-get update
           sudo apt-get install -y \
             libgtk-3-dev libwebkit2gtk-4.1-dev libappindicator3-dev \
             librsvg2-dev patchelf libfuse2 desktop-file-utils \
-            libgdk-pixbuf2.0-dev zsync xz-utils wget curl
+            libgdk-pixbuf2.0-dev zsync xz-utils wget curl file
 
       - name: Install frontend dependencies
         run: npm install
-
-      # -------------------------------------------------
-      # LIMPIAR SUBMÓDULOS HUERFANOS
-      # -------------------------------------------------
-      - name: Remove stale .gitmodules (if present)
-        run: |
-          if [ -f .gitmodules ]; then
-            grep -v 'docs/Fina-Ergen.wiki' .gitmodules > .gitmodules.tmp
-            mv .gitmodules.tmp .gitmodules
-          fi
 
       - name: Download Piper Binary (Sidecar)
         run: |
@@ -56,40 +43,65 @@ jobs:
             rm -rf piper piper.tar.gz
           fi
 
-      - name: Build deb package (no AppImage)
+      - name: Build deb package only (no linuxdeploy)
         run: npm run tauri:deb
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Extract deb and build patched AppImage
-        id: appimage
+        id: pkg
         run: |
-          set -e
+          set -euo pipefail
           DEB_PATH=$(find ./src-tauri/target/release/bundle/deb -name "*.deb" | head -n 1)
           echo "Deb found: $DEB_PATH"
+
           APPDIR=$(mktemp -d)
           dpkg-deb -x "$DEB_PATH" "$APPDIR"
-          mkdir -p "$APPDIR/usr/bin"
-          cat > "$APPDIR/Fina Seinen.desktop" <<EOF
-[Desktop Entry]
-Name=Fina Seinen
-Exec=Fina-Seinen
-Icon=Fina-Seinen
-Type=Application
-Categories=Utility;
-EOF
-          if [ -f "src-tauri/icons/32x32.png" ]; then
-            cp src-tauri/icons/32x32.png "$APPDIR/Fina Seinen.png"
-          fi
-          wget -O appimagetool-x86_64.AppImage https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
-          chmod +x appimagetool-x86_64.AppImage
-          ./appimagetool-x86_64.AppImage --comp xz "$APPDIR" "Fina Seinen_${{ github.ref_name }}_amd64_patched.AppImage"
-          echo "APPIMAGE_PATH=Fina Seinen_${{ github.ref_name }}_amd64_patched.AppImage" >> $GITHUB_OUTPUT
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload patched AppImage to release
+          cat <<'EOF' > "$APPDIR/AppRun"
+          #!/bin/sh
+          HERE="$(dirname "$(readlink -f "${0}")")"
+          export PATH="${HERE}/usr/bin:${PATH}"
+          export LD_LIBRARY_PATH="${HERE}/usr/lib:${LD_LIBRARY_PATH:-}"
+          exec "${HERE}/usr/bin/fina-ergen" "$@"
+          EOF
+          chmod +x "$APPDIR/AppRun"
+
+          cat <<'EOF' > "$APPDIR/fina-seinen.desktop"
+          [Desktop Entry]
+          Name=Fina Seinen
+          Exec=fina-ergen
+          Icon=fina-seinen
+          Type=Application
+          Categories=Utility;
+          EOF
+
+          cp src-tauri/icons/256x256.png "$APPDIR/fina-seinen.png"
+          cp src-tauri/icons/256x256.png "$APPDIR/.DirIcon"
+
+          wget -O appimagetool-x86_64.AppImage https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
+          chmod +x appimagetool-x86_64.AppImage
+
+          TAG_VER="${GITHUB_REF_NAME}"
+          if [[ ! "$TAG_VER" =~ ^v ]]; then
+            TAG_VER="v3.6.0-manual-${GITHUB_RUN_NUMBER}"
+          fi
+          APPIMAGE_NAME="Fina-Seinen_${TAG_VER}_patched_amd64.AppImage"
+
+          APPIMAGE_EXTRACT_AND_RUN=1 ARCH=x86_64 ./appimagetool-x86_64.AppImage --comp xz "$APPDIR" "$APPIMAGE_NAME"
+
+          echo "DEB_PATH=$DEB_PATH" >> "$GITHUB_OUTPUT"
+          echo "APPIMAGE_PATH=$APPIMAGE_NAME" >> "$GITHUB_OUTPUT"
+          echo "RELEASE_TAG=$TAG_VER" >> "$GITHUB_OUTPUT"
+
+      - name: Upload deb and patched AppImage to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ github.ref_name }}
-          files: ${{ steps.appimage.outputs.APPIMAGE_PATH }}
+          tag_name: ${{ steps.pkg.outputs.RELEASE_TAG }}
+          name: "Fina Seinen ${{ steps.pkg.outputs.RELEASE_TAG }}"
+          body: |
+            ### 🚀 Fina Seinen ${{ steps.pkg.outputs.RELEASE_TAG }}
+
+            - **`.deb`**: Paquete nativo para Debian / Ubuntu / Linux Mint.
+            - **`_patched_amd64.AppImage`**: AppImage universal con compresión XZ construido directamente desde el `.deb` (sin `linuxdeploy`).
+          files: |
+            ${{ steps.pkg.outputs.DEB_PATH }}
+            ${{ steps.pkg.outputs.APPIMAGE_PATH }}
