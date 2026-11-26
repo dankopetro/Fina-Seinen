@@ -1,6 +1,6 @@
 # 🌌 Fina Plugins Market: Universal Development Standards
 
-To make a plugin compatible with Fina Ergen's "Zero-Config" interface, it must strictly follow this structure. This allows Fina to automatically locate the necessary scripts for the App buttons regardless of the user's hardware.
+To make a plugin compatible with Fina Seinen's "Zero-Config" interface, it must strictly follow this structure. This allows Fina to automatically locate the necessary scripts for the App buttons regardless of the user's hardware.
 
 ## 📂 Directory Structure
 
@@ -143,4 +143,4 @@ intents:
 4.  **Speed**: Fina is a fast control system. Optimize your scripts (ADB, HTTP, etc.) to respond in less than 2 seconds.
 
 ---
-*Fina Ergen - Market Plugin Standards Documentation (2026)*
+*Fina Seinen - Market Plugin Standards Documentation (2026)*

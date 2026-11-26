@@ -29,10 +29,10 @@ from typing import List, Dict, Optional, Any, Tuple, Union, Callable
 from email.message import EmailMessage
 from datetime import datetime, timedelta
 
-# --- DYNAMIC PATHS FOR ERGEN ---
-ERGEN_ROOT = os.path.dirname(os.path.abspath(__file__))
-# GLOBAL_ROOT is now same as ERGEN for independence
-GLOBAL_ROOT = ERGEN_ROOT
+# --- DYNAMIC PATHS FOR SEINEN ---
+SEINEN_ROOT = os.path.dirname(os.path.abspath(__file__))
+# GLOBAL_ROOT is now same as SEINEN for independence
+GLOBAL_ROOT = SEINEN_ROOT
 
 # --- ROBUST LOGGING SETUP ---
 # Clear pre-existing handlers from libraries to avoid conflicts
@@ -57,7 +57,7 @@ CONFIG_DIR = get_config_dir()
 log_base_config_dir = os.path.join(CONFIG_DIR, "Logs")
 log_dir = os.path.join(log_base_config_dir, datetime.now().strftime("%Y-%m-%d"))
 os.makedirs(log_dir, exist_ok=True)
-log_filename = f"ergen_session_{datetime.now().strftime('%H-%M-%S')}.log"
+log_filename = f"seinen_session_{datetime.now().strftime('%H-%M-%S')}.log"
 log_path = os.path.join(log_dir, log_filename)
 
 # Force unbuffered output for streams
@@ -130,7 +130,7 @@ logging.basicConfig(
     handlers=[file_handler, stream_handler]
 )
 
-logger = logging.getLogger("ErgenUtils")
+logger = logging.getLogger("SeinenUtils")
 logger.info(f"--- SESIÓN INICIADA: {datetime.now()} ---")
 logger.info(f"Log path: {log_path}")
 
@@ -168,13 +168,13 @@ for label, p in [("Settings", SETTINGS_PATH), ("Contacts", CONTACTS_PATH), ("Con
 def _ensure_config_exists():
     """Migrar o crear archivos base si no existen en .config/Fina"""
     # Intentar detectar si estamos en un entorno de desarrollo o AppImage
-    # Si estamos en AppImage, ERGEN_ROOT suele ser algo como /tmp/.mount_XXXX
+    # Si estamos en AppImage, SEINEN_ROOT suele ser algo como /tmp/.mount_XXXX
     migration_map = {
-        os.path.join(ERGEN_ROOT, "config", "settings.json"): SETTINGS_PATH,
-        os.path.join(ERGEN_ROOT, "user_data.json"): USER_DATA_PATH,
-        os.path.join(ERGEN_ROOT, "config", "contact.json"): CONTACTS_PATH,
-        os.path.join(ERGEN_ROOT, "config.py"): CONFIG_PY_PATH,
-        os.path.join(ERGEN_ROOT, "tuya_config.json"): TUYA_CONFIG_PATH,
+        os.path.join(SEINEN_ROOT, "config", "settings.json"): SETTINGS_PATH,
+        os.path.join(SEINEN_ROOT, "user_data.json"): USER_DATA_PATH,
+        os.path.join(SEINEN_ROOT, "config", "contact.json"): CONTACTS_PATH,
+        os.path.join(SEINEN_ROOT, "config.py"): CONFIG_PY_PATH,
+        os.path.join(SEINEN_ROOT, "tuya_config.json"): TUYA_CONFIG_PATH,
     }
     for src, dst in migration_map.items():
         if not os.path.exists(dst) and os.path.exists(src):
@@ -191,7 +191,7 @@ _ensure_config_exists()
 # --- I18N SUPPORT ---
 I18N_DATA = {}
 try:
-    lang_path = os.path.join(ERGEN_ROOT, "lang.json")
+    lang_path = os.path.join(SEINEN_ROOT, "lang.json")
     if os.path.exists(lang_path):
         with open(lang_path, 'r', encoding='utf-8') as f:
             I18N_DATA = json.load(f)
@@ -203,9 +203,9 @@ except Exception as e:
 IDIO_DATA = {}
 try:
     potential_paths = [
-        os.path.join(ERGEN_ROOT, "modismos.json"),
+        os.path.join(SEINEN_ROOT, "modismos.json"),
         os.path.join(CONFIG_DIR, "modismos.json"),
-        "/usr/lib/fina-ergen/modismos.json"
+        "/usr/lib/fina-seinen/modismos.json"
     ]
     idio_path: Optional[str] = None
     for p in potential_paths:
@@ -447,12 +447,12 @@ def check_system_dependencies():
                     msg = "¡Hola! Fina funcionará bien, pero he detectado que en tu Linux faltan estas herramientas del sistema:\n\n"
                     for m in missing: msg += f" - {m}\n"
                     msg += f"\nPara tener la experiencia al 100%, abrí una terminal y ejecutá:\n\nsudo apt install {pkg_names}"
-                    title = "Aviso de Sistema - Fina Ergen"
+                    title = "Aviso de Sistema - Fina Seinen"
                 else:
                     msg = "Hello! Fina will run fine, but I detected your Linux is missing some system tools:\n\n"
                     for m in missing: msg += f" - {m}\n"
                     msg += f"\nFor a 100% complete experience, open a terminal and run:\n\nsudo apt install {pkg_names}"
-                    title = "System Notice - Fina Ergen"
+                    title = "System Notice - Fina Seinen"
                 
                 import subprocess
                 subprocess.Popen(["zenity", "--warning", "--title", title, "--text", msg, "--width", "500"])
@@ -622,20 +622,20 @@ def _voice_engine_worker():
     piper_path = None
     potential_locations = [
         # Ruta REAL donde Tauri/deb instala el sidecar
-        "/usr/lib/fina-ergen/binaries/piper-x86_64-unknown-linux-gnu",
-        "/usr/lib/fina-ergen/binaries/piper",
+        "/usr/lib/fina-seinen/binaries/piper-x86_64-unknown-linux-gnu",
+        "/usr/lib/fina-seinen/binaries/piper",
         # Tauri externalBin también puede ir a /usr/bin
         "/usr/bin/piper-x86_64-unknown-linux-gnu",
         "/usr/bin/piper",
         "/usr/local/bin/piper",
         # Rutas dentro del bundle de recursos
-        os.path.join(ERGEN_ROOT, "binaries", "piper", "piper"),
-        os.path.join(ERGEN_ROOT, "binaries", "piper-x86_64-unknown-linux-gnu"),
-        os.path.join(ERGEN_ROOT, "piper-x86_64-unknown-linux-gnu"),
-        os.path.join(ERGEN_ROOT, "piper"),
-        os.path.join(os.path.dirname(ERGEN_ROOT), "binaries", "piper-x86_64-unknown-linux-gnu"),
-        os.path.join(ERGEN_ROOT, "bin", "piper"),
-        "/usr/lib/fina-ergen/_up_/binaries/piper-x86_64-unknown-linux-gnu",
+        os.path.join(SEINEN_ROOT, "binaries", "piper", "piper"),
+        os.path.join(SEINEN_ROOT, "binaries", "piper-x86_64-unknown-linux-gnu"),
+        os.path.join(SEINEN_ROOT, "piper-x86_64-unknown-linux-gnu"),
+        os.path.join(SEINEN_ROOT, "piper"),
+        os.path.join(os.path.dirname(SEINEN_ROOT), "binaries", "piper-x86_64-unknown-linux-gnu"),
+        os.path.join(SEINEN_ROOT, "bin", "piper"),
+        "/usr/lib/fina-seinen/_up_/binaries/piper-x86_64-unknown-linux-gnu",
         os.path.join(os.path.expanduser("~"), ".local", "bin", "piper")
     ]
     for loc in potential_locations:
@@ -739,7 +739,7 @@ def _voice_engine_worker():
 
                 safe_text = shlex.quote(clean_text)
                 # Directorio donde están las .so y espeak-ng-data de Piper (bundled con el .deb)
-                piper_libs_dir = "/usr/lib/fina-ergen/binaries/piper"
+                piper_libs_dir = "/usr/lib/fina-seinen/binaries/piper"
                 if not os.path.exists(piper_libs_dir):
                     piper_libs_dir = os.path.join(os.path.dirname(piper_path), "piper") if piper_path else ""
                 espeak_data = os.path.join(piper_libs_dir, "espeak-ng-data")
@@ -962,7 +962,7 @@ def load_vosk_model(language=None):
         loaded_path = None
         for m_name in model_names_to_try:
             user_config_path = os.path.join(CONFIG_DIR, "model", m_name)
-            project_path = os.path.join(ERGEN_ROOT, "model", m_name)
+            project_path = os.path.join(SEINEN_ROOT, "model", m_name)
             
             if os.path.exists(user_config_path):
                 loaded_path = user_config_path
@@ -1352,8 +1352,8 @@ def web_search(q):
 def _run_system_script(script_name, arg):
     """Ejecuta un script de sistema buscando en varias ubicaciones."""
     posibles = [
-        os.path.join(ERGEN_ROOT, "scripts", script_name),
-        os.path.join(ERGEN_ROOT, "plugins", "system", "scripts", script_name)
+        os.path.join(SEINEN_ROOT, "scripts", script_name),
+        os.path.join(SEINEN_ROOT, "plugins", "system", "scripts", script_name)
     ]
     
     script_path = None
@@ -1836,7 +1836,7 @@ def backup_files():
         backup_dir = os.path.expanduser("~/Fina_Backups")
         os.makedirs(backup_dir, exist_ok=True)
         filename = f"fina_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-        shutil.make_archive(os.path.join(backup_dir, filename), 'zip', ERGEN_ROOT)
+        shutil.make_archive(os.path.join(backup_dir, filename), 'zip', SEINEN_ROOT)
         return f"Copia de seguridad creada en {backup_dir}/{filename}.zip"
     except Exception as e:
         return f"Error en backup: {e}"
@@ -2367,7 +2367,7 @@ def update_assistant_code(m=None, *args, **kwargs):
 
         # 2. MODO USUARIO FINAL (GITHUB RELEASES)
         repo_user = get_unified_config("GITHUB_USER", "dankopetro")
-        repo_name = get_unified_config("GITHUB_REPO", "Fina-Ergen")
+        repo_name = get_unified_config("GITHUB_REPO", "Fina-Seinen")
         api_url = f"https://api.github.com/repos/{repo_user}/{repo_name}/releases/latest"
         
         # Version local actual (extraída si es posible, sino default)
@@ -2615,7 +2615,7 @@ def energy_status_cmd(m):
 def _get_plugin_by_category(category):
     """Busca un plugin en el market que pertenezca a una categoría"""
     import yaml
-    market_path = os.path.join(ERGEN_ROOT, ".local_lab", "Fina-Plugins-Market-Working")
+    market_path = os.path.join(SEINEN_ROOT, ".local_lab", "Fina-Plugins-Market-Working")
     for root, dirs, files in os.walk(market_path):
         if "plugin.yaml" in files:
             try:
@@ -2669,7 +2669,7 @@ def run_mobile_message(number, msg, app="whatsapp", voice_model=None):
     logger.info(f"📱 MOBILE RUN: {app} -> {number}: {msg}")
     
     # Importador dinámico para el motor universal de Fina
-    sys.path.append(os.path.join(ERGEN_ROOT, "plugins", "system"))
+    sys.path.append(os.path.join(SEINEN_ROOT, "plugins", "system"))
     from mobile_hub import UniversalMobileHub
     
     try:
@@ -2740,7 +2740,7 @@ if __name__ == "__main__":
         elif action == "update_ui" and len(sys.argv) > 2:
             update_ui_state("idle", process=sys.argv[2])
     else:
-        print("Ergen Utils CLI: Use 'speak <msg>' or 'update_ui <msg>'")
+        print("Seinen Utils CLI: Use 'speak <msg>' or 'update_ui <msg>'")
 
 
 

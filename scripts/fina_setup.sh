@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# FINA ERGEN - ASISTENTE DE POST-INSTALACIÓN
+# FINA SEINEN - ASISTENTE DE POST-INSTALACIÓN
 # ==============================================================================
 # Este script configura el idioma inicial y descarga los modelos pesados (Voz/STT)
 # Basado en Zenity para una interfaz amigable en Linux.
@@ -28,7 +28,7 @@ if ! command -v zenity &> /dev/null; then
 fi
 
 # --- 1. SELECCIÓN DE IDIOMA ---
-LANG=$(zenity --list --title="Fina Ergen - Idioma" \
+LANG=$(zenity --list --title="Fina Seinen - Idioma" \
     --column="Código" --column="Idioma" \
     "es" "Español (Castellano/Argentino)" \
     "en" "English (United States/UK)" \
@@ -68,7 +68,7 @@ case $LANG in
         ;;
 esac
 
-VOICE_ID=$(zenity --list --title="Fina Ergen - Modelo de Voz" \
+VOICE_ID=$(zenity --list --title="Fina Seinen - Modelo de Voz" \
     --text="Selecciona el modelo de voz para $LANG:" \
     --column="ID" --column="Descripción" \
     "${VOICE_LIST[@]}" \
@@ -138,6 +138,6 @@ os.makedirs(os.path.dirname(path), exist_ok=True)
 with open(path, 'w') as f: json.dump(data, f, indent=4)
 EOF
 
-zenity --info --title="Completado" --text="Fina Ergen ha sido configurada correctamente.\nIdioma: $LANG\nVoz: $VOICE_ID\n\nYa puedes iniciar la aplicación."
+zenity --info --title="Completado" --text="Fina Seinen ha sido configurada correctamente.\nIdioma: $LANG\nVoz: $VOICE_ID\n\nYa puedes iniciar la aplicación."
 
 exit 0

@@ -11,7 +11,7 @@ import {
 import QRCode from 'qrcode';
 import FinaAvatar from "./components/FinaAvatar.vue";
 import WeatherModule from "./components/WeatherModule.vue";
-import iconAvatar from "./assets/iconoergen.png";
+import iconAvatar from "./assets/iconoseinen.png";
 
 // --- DIAGNÓSTICO DE ERRORES FATALES ---
 window.onerror = function (msg, url, line, col, error) {
@@ -154,7 +154,7 @@ const t = (key, fallback = "") => {
 
 const finaState = ref({
     status: "idle",
-    process: "INICIALIZANDO ERGEN...",
+    process: "INICIALIZANDO SEINEN...",
     intensity: 0.0,
     showPasswordField: false,
     authError: false
@@ -201,7 +201,7 @@ const activeTvRoom = ref('Living');
 const roomList = ['Dormitorio', 'Living', 'Comedor', 'Cocina', 'Cobertizo', 'Deco'];
 const activeBioTab = ref('huella');
 const activeCameraView = ref('grid');
-const version = "Fina Ergen v 3.6.0 (23/03/2026 14:00)";
+const version = "Fina Seinen v0.1.11 (26/11/2026)";
 const buildDate = "Vie 13 Mar 2026 13:30";
 
 const showOptInModal = ref(false);
@@ -332,27 +332,27 @@ const showSentinel = ref(false);
 const sentinelInput = ref("");
 const sentinelHistogram = ref(Array.from({ length: 16 }, () => Math.floor(Math.random() * 90) + 10));
 const neuralActivity = ref(35);
-const ergenStatus = ref("NOMINAL");
-const activeModel = ref("Ergen-3.2-Ultra");
+const seinenStatus = ref("NOMINAL");
+const activeModel = ref("Seinen-3.2-Ultra");
 const thoughtStream = ref([
     "Sincronizando núcleos neuronales...",
     "Analizando patrones de comportamiento...",
     "Optimizando respuesta sensorial...",
-    "Base de datos Ergen actualizada."
+    "Base de datos Seinen actualizada."
 ]);
 
 const updateNeuralState = () => {
     setInterval(() => {
         neuralActivity.value = Math.floor(Math.random() * (85 - 20) + 20);
-        if (neuralActivity.value > 80) ergenStatus.value = "PENSAMIENTO PROFUNDO";
-        else ergenStatus.value = "NOMINAL";
+        if (neuralActivity.value > 80) seinenStatus.value = "PENSAMIENTO PROFUNDO";
+        else seinenStatus.value = "NOMINAL";
 
         if (Math.random() > 0.8) {
             const thoughts = [
                 "Procesando entrada de voz...",
                 t('ui_scanning_nodes', 'Escaneando nodos locales...'),
                 "Ajustando parámetros de latencia...",
-                "Ergen Core estable.",
+                "Seinen Core estable.",
                 "Actualizando heurísticas...",
                 "Refinando modelo predictivo..."
             ];
@@ -1620,9 +1620,9 @@ const weatherIcon = computed(() => {
         // Lanzamiento ultrarrápido (tipo Fina Phoenix)
         const pyPath = pythonExecutable.value;
         const shCmd = `
-        MARKET="${projectRoot.value}/.local_lab/Fina-Plugins-Market-Working/Doorbells/Tuya/M8/monitor_ergen.py"
-        CONFIG_NEW="$HOME/.config/Fina/plugins/Doorbells/Tuya/M8/monitor_ergen.py"
-        CONFIG_OLD="$HOME/.config/Fina/plugins/doorbell/monitor_ergen.py"
+        MARKET="${projectRoot.value}/.local_lab/Fina-Plugins-Market-Working/Doorbells/Tuya/M8/monitor_seinen.py"
+        CONFIG_NEW="$HOME/.config/Fina/plugins/Doorbells/Tuya/M8/monitor_seinen.py"
+        CONFIG_OLD="$HOME/.config/Fina/plugins/doorbell/monitor_seinen.py"
         
         if [ -f "$CONFIG_NEW" ]; then
             "${pyPath}" "$CONFIG_NEW" --trigger &
@@ -2911,7 +2911,7 @@ const selectFolder = async (settingKey) => {
                 </div>
                 <span v-if="!isSidebarCollapsed"
                     class="ml-4 font-black text-xl text-white tracking-tighter uppercase whitespace-nowrap animate-in fade-in slide-in-from-left-2 duration-300">Fina
-                    Ergen</span>
+                    Seinen</span>
             </div>
 
             <nav class="flex-1 px-3 space-y-2">
@@ -3950,7 +3950,7 @@ const selectFolder = async (settingKey) => {
                                                 :class="activeSettingsTab === 'general' ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/30' : 'text-slate-500 hover:text-slate-300 border-transparent'"
                                                 class="flex items-center gap-4 px-6 py-4 rounded-2xl border transition-all text-xs font-black uppercase tracking-widest text-left">
                                                 <i class="fa-solid fa-brain w-5"></i>
-                                                Núcleo Ergen
+                                                Núcleo Seinen
                                             </button>
                                             <button @click="activeSettingsTab = 'plugins'"
                                                 :class="activeSettingsTab === 'plugins' ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/30' : 'text-slate-500 hover:text-slate-300 border-transparent'"
@@ -4059,7 +4059,7 @@ const selectFolder = async (settingKey) => {
                                 <div
                                     class="flex-1 p-12 overflow-y-auto custom-scrollbar bg-gradient-to-br from-transparent to-cyan-500/5 relative">
 
-                                    <!-- TAB: NÚCLEO ERGEN (DASHBOARD) -->
+                                    <!-- TAB: NÚCLEO SEINEN (DASHBOARD) -->
                                     <div v-if="activeSettingsTab === 'general'"
                                         class="animate-in fade-in zoom-in-95 duration-700 h-full flex flex-col">
 
@@ -4067,7 +4067,7 @@ const selectFolder = async (settingKey) => {
                                             <div class="flex flex-col">
                                                 <h3
                                                     class="text-3xl font-black text-white uppercase tracking-tighter italic">
-                                                    NÚCLEO ERGEN</h3>
+                                                    NÚCLEO SEINEN</h3>
                                                 <p
                                                     class="text-[10px] font-black text-indigo-400 uppercase tracking-[0.4em] mt-2">
                                                     Central Intelligence
@@ -5181,7 +5181,7 @@ const selectFolder = async (settingKey) => {
                             <img src="/assets/avatar.png"
                                 class="h-28 w-28 rounded-full border-4 border-[#020617] shadow-2xl mb-6" />
                             <h3 class="text-3xl font-black text-white tracking-tighter mb-1 uppercase">
-                                Fina AI Ergen
+                                Fina AI Seinen
                             </h3>
                             <div
                                 class="flex items-center gap-2 bg-cyan-400/10 px-3 py-1 rounded-full border border-cyan-400/20">

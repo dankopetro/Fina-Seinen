@@ -1,6 +1,6 @@
 # 🏪 Fina Plugins Market
 
-¡Bienvenido al mercado oficial de plugins para **Fina Ergen**! Aquí puedes encontrar extensiones para controlar tus dispositivos, añadir nuevas capacidades de inteligencia artificial y personalizar tu asistente al máximo.
+¡Bienvenido al mercado oficial de plugins para **Fina Seinen**! Aquí puedes encontrar extensiones para controlar tus dispositivos, añadir nuevas capacidades de inteligencia artificial y personalizar tu asistente al máximo.
 
 ---
 
@@ -22,7 +22,7 @@
 
 ## 🛠️ Cómo instalar un Plugin
 1. Descarga la carpeta del plugin que te interese.
-2. Cópiala dentro de la carpeta `plugins/` en tu instalación de Fina Ergen.
+2. Cópiala dentro de la carpeta `plugins/` en tu instalación de Fina Seinen.
 3. Reinicia Fina. ¡Listo! El asistente reconocerá automáticamente los nuevos comandos.
 
 ---

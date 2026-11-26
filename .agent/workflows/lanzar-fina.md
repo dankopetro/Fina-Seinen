@@ -1,5 +1,5 @@
 ---
-description: Lanza la aplicación Fina Ergen en modo desarrollo
+description: Lanza la aplicación Fina Seinen en modo desarrollo
 ---
 
 // turbo-all

@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    fina_ergen_lib::run()
+    fina_seinen_lib::run()
 }

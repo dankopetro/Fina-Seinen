@@ -1,6 +1,6 @@
-# Contribuyendo a Fina Ergen 🧩
+# Contribuyendo a Fina Seinen 🧩
 
-Primero que nada, **¡gracias por tu interés en hacer a Fina Ergen aún mejor!** 🎉 Fina es un proyecto de código abierto que se nutre del esfuerzo y las ideas de personas como tú.
+Primero que nada, **¡gracias por tu interés en hacer a Fina Seinen aún mejor!** 🎉 Fina es un proyecto de código abierto que se nutre del esfuerzo y las ideas de personas como tú.
 
 Este documento proporciona pautas para colaborar, ya sea creando un nuevo módulo (plugin), corrigiendo errores, mejorando la interfaz de usuario web o ayudando con la documentación.
 
@@ -8,10 +8,10 @@ Este documento proporciona pautas para colaborar, ya sea creando un nuevo módul
 
 ## � ¿Cómo puedo colaborar?
 
-Existen muchísimas formas de ayudar al ecosistema de Fina Ergen:
+Existen muchísimas formas de ayudar al ecosistema de Fina Seinen:
 
-1. **Creando nuevos Plugins**: Fina Ergen está construida sobre una arquitectura modular. Si tienes una bombilla inteligente, un ventilador, una TV o cualquier dispositivo, ¡crea un plugin para él! Revisa el [repositorio oficial de Plugins Market](https://github.com/dankopetro/Fina-Plugins-Market) para ver la guía del SDK y agregar el tuyo.
-2. **Reportando Errores**: Si Fina se cierra sola, un comando no funciona o la interfaz tiene problemas, crea un [Issue](https://github.com/dankopetro/Fina-Ergen/issues) explicando qué ocurrió y, si es posible, mostrando el log de la terminal.
+1. **Creando nuevos Plugins**: Fina Seinen está construida sobre una arquitectura modular. Si tienes una bombilla inteligente, un ventilador, una TV o cualquier dispositivo, ¡crea un plugin para él! Revisa el [repositorio oficial de Plugins Market](https://github.com/dankopetro/Fina-Plugins-Market) para ver la guía del SDK y agregar el tuyo.
+2. **Reportando Errores**: Si Fina se cierra sola, un comando no funciona o la interfaz tiene problemas, crea un [Issue](https://github.com/dankopetro/Fina-Seinen/issues) explicando qué ocurrió y, si es posible, mostrando el log de la terminal.
 3. **Proponiendo Mejoras**: ¿Una nueva función para el frontend en Vue? ¿Un módulo de IA distinto? Comparte tu idea.
 4. **Mejorando el Código (Pull Requests)**: Si ya has arreglado algo o añadido una función genial al núcleo (Fina Core) o al Frontend (Tauri/Vue).
 
@@ -28,7 +28,7 @@ Para trabajar en el núcleo de Fina o en su interfaz gráfica, necesitarás inst
 
 ### Pasos Iniciales:
 1. Haz un **fork** de este repositorio.
-2. Clona tu fork localmente: `git clone https://github.com/tu-usuario/Fina-Ergen.git`
+2. Clona tu fork localmente: `git clone https://github.com/tu-usuario/Fina-Seinen.git`
 3. Instala las dependencias de Python (si tocas el Core): `pip install -r requirements.txt`
 4. Instala las dependencias del frontend: `npm install`
 5. Levanta el entorno de prueba de Tauri: `npm run tauri dev`
@@ -50,4 +50,4 @@ Por favor, mantén siempre el respeto en los Issues y Pull Requests. Queremos qu
 
 ---
 
-¡Disfruta programando y gracias por hacer crecer a Fina Ergen! 🚀💻
+¡Disfruta programando y gracias por hacer crecer a Fina Seinen! 🚀💻

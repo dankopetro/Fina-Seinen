@@ -43,7 +43,7 @@ logs/
 nohup.out
 AIGenerated/
 temp_audio/
-ergen_log*
+seinen_log*
 
 # Modelos Pesados de IA
 voice_models/

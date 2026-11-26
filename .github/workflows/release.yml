@@ -62,14 +62,14 @@ jobs:
           HERE="$(dirname "$(readlink -f "${0}")")"
           export PATH="${HERE}/usr/bin:${PATH}"
           export LD_LIBRARY_PATH="${HERE}/usr/lib:${LD_LIBRARY_PATH:-}"
-          exec "${HERE}/usr/bin/fina-ergen" "$@"
+          exec "${HERE}/usr/bin/fina-seinen" "$@"
           EOF
           chmod +x "$APPDIR/AppRun"
 
           cat <<'EOF' > "$APPDIR/fina-seinen.desktop"
           [Desktop Entry]
           Name=Fina Seinen
-          Exec=fina-ergen
+          Exec=fina-seinen
           Icon=fina-seinen
           Type=Application
           Categories=Utility;
@@ -83,7 +83,7 @@ jobs:
 
           TAG_VER="${GITHUB_REF_NAME}"
           if [[ ! "$TAG_VER" =~ ^v ]]; then
-            TAG_VER="v3.6.0-manual-${GITHUB_RUN_NUMBER}"
+            TAG_VER="v0.1.11-manual-${GITHUB_RUN_NUMBER}"
           fi
           APPIMAGE_NAME="Fina-Seinen_${TAG_VER}_patched_amd64.AppImage"
 

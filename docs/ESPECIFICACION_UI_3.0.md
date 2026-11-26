@@ -1,7 +1,7 @@
-# Fina Ergen UI 3.0: "Visual Domain Expansion"
+# Fina Seinen UI 3.0: "Visual Domain Expansion"
 
 **Fecha:** 05/02/2026
-**Versión Objetivo:** Fina-Ergen v3.0
+**Versión Objetivo:** Fina-Seinen v3.0
 
 ## 1. Introducción
 Este documento detalla la reestructuración completa de la interfaz de visualización de Fina, transformándola de un panel informativo estático a un "Centro de Comando" dinámico y segmentado por dominios. El objetivo es lograr una experiencia "Premium" con estéticas glassmorphism, animaciones fluidas y alta interactividad.

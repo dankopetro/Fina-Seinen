@@ -1,5 +1,5 @@
 #!/bin/bash
-# Brain Sidecar - Fina Ergen v3.5.8-23
+# Brain Sidecar - Fina Seinen v0.1.11
 # GESTIÓN UNIVERSAL DE ENTORNO Y PROCESOS [EDICIÓN RECONSTRUCCIÓN FINAL]
 
 # 1. Rutas Base y Logging
@@ -20,32 +20,32 @@ echo "🏠 HOME: $HOME"
 echo "🔍 PWD: $(pwd)"
 
 # 2. Búsqueda Exhaustiva de la Raíz del Proyecto (main.py)
-ERGEN_ROOT=""
+SEINEN_ROOT=""
 
 # Lista de búsqueda táctica TOTAL:
 search_paths=(
-    "$SCRIPT_DIR/_up_"              # Relativo al sidecar en /usr/lib/fina-ergen/
-    "$SCRIPT_DIR/../_up_"           # Relativo al sidecar en /usr/lib/fina-ergen/binaries/
+    "$SCRIPT_DIR/_up_"              # Relativo al sidecar en /usr/lib/fina-seinen/
+    "$SCRIPT_DIR/../_up_"           # Relativo al sidecar en /usr/lib/fina-seinen/binaries/
     "$SCRIPT_DIR/.."                # Tauri Resources standard
     "$SCRIPT_DIR/../../.."          # Development (src-tauri/binaries -> project_root)
-    "$SCRIPT_DIR/../lib/fina-ergen/_up_" # AppImage Resource path (Tauri v2)
-    "$SCRIPT_DIR/../lib/fina-ergen"      # AppImage Alternative
-    "$SCRIPT_DIR/../share/fina-ergen/_up_" # AppImage Share path
-    "$SCRIPT_DIR/../share/fina-ergen"      # AppImage Share Alternative
-    "/usr/lib/fina-ergen/_up_"      # Ruta absoluta estándar DEB (Fina Resources)
-    "/usr/lib/fina-ergen"           # Ruta absoluta alternativa
-    "/usr/share/fina-ergen/_up_"    # Ruta absoluta estándar RPM
-    "/usr/share/fina-ergen"         # Ruta absoluta alternativa RPM
-    "/opt/fina-ergen/_up_"          # Otras instalaciones
-    "/usr/lib/Fina-Ergen Lite/_up_"
-    "/usr/lib/Fina-Ergen Lite"
-    "/usr/share/Fina-Ergen Lite/_up_"
-    "/usr/share/Fina-Ergen Lite"
-    "/usr/lib/fina-ergen-lite/_up_"
-    "/usr/lib/fina-ergen-lite"
-    "/usr/share/fina-ergen-lite/_up_"
-    "/usr/share/fina-ergen-lite"
-    "/opt/fina-ergen-lite/_up_"
+    "$SCRIPT_DIR/../lib/fina-seinen/_up_" # AppImage Resource path (Tauri v2)
+    "$SCRIPT_DIR/../lib/fina-seinen"      # AppImage Alternative
+    "$SCRIPT_DIR/../lib/Fina Seinen/_up_" # AppImage ProductName path
+    "$SCRIPT_DIR/../lib/Fina Seinen"      # AppImage ProductName Alternative
+    "$SCRIPT_DIR/../share/fina-seinen/_up_" # AppImage Share path
+    "$SCRIPT_DIR/../share/fina-seinen"      # AppImage Share Alternative
+    "/usr/lib/fina-seinen/_up_"      # Ruta absoluta estándar DEB (Fina Resources)
+    "/usr/lib/fina-seinen"           # Ruta absoluta alternativa
+    "/usr/lib/Fina Seinen/_up_"      # Ruta absoluta DEB ProductName
+    "/usr/lib/Fina Seinen"           # Ruta absoluta DEB ProductName alternativa
+    "/usr/share/fina-seinen/_up_"    # Ruta absoluta estándar RPM
+    "/usr/share/fina-seinen"         # Ruta absoluta alternativa RPM
+    "/opt/fina-seinen/_up_"          # Otras instalaciones
+    "/usr/lib/Fina-Seinen/_up_"
+    "/usr/lib/Fina-Seinen"
+    "/usr/share/Fina-Seinen/_up_"
+    "/usr/share/Fina-Seinen"
+    "/opt/Fina-Seinen/_up_"
     "$(pwd)"                        # Fallback local
 )
 
@@ -53,13 +53,13 @@ echo "🔍 Buscando archivos core (fina_api.py / main.py)..."
 for path in "${search_paths[@]}"; do
     ABS_PATH="$(realpath "$path" 2>/dev/null)"
     if [ -n "$ABS_PATH" ] && [ -f "$ABS_PATH/main.py" ] && [ -f "$ABS_PATH/fina_api.py" ]; then
-        ERGEN_ROOT="$ABS_PATH"
-        echo "✅ Raíz encontrada exitosamente en: $ERGEN_ROOT"
+        SEINEN_ROOT="$ABS_PATH"
+        echo "✅ Raíz encontrada exitosamente en: $SEINEN_ROOT"
         break
     fi
 done
 
-if [ -z "$ERGEN_ROOT" ]; then
+if [ -z "$SEINEN_ROOT" ]; then
     echo "❌ ERROR FATAL: No se pudo localizar la instalación de Fina."
     echo "Faltan main.py y fina_api.py en los directorios de recursos."
     echo "Rutas exploradas:"
@@ -85,10 +85,10 @@ PYTHON_BIN=""
 # 4. Gestión de VENV e Instalación VISIBLE
 USER_VENV=""
 
-# 4.1 Buscar en subcarpetas locales comunes en ERGEN_ROOT
+# 4.1 Buscar en subcarpetas locales comunes en SEINEN_ROOT
 for env_name in "venv" ".venv" "env" ".env"; do
-    if [ -f "$ERGEN_ROOT/$env_name/bin/python3" ]; then
-        USER_VENV="$ERGEN_ROOT/$env_name"
+    if [ -f "$SEINEN_ROOT/$env_name/bin/python3" ]; then
+        USER_VENV="$SEINEN_ROOT/$env_name"
         echo "🐍 [ENCONTRADO] Entorno Virtual '$env_name' detectado en proyecto."
         break
     fi
@@ -120,9 +120,9 @@ fi
 # DETERMINAR IDIOMA DEL SISTEMA
 SYS_LANG="${LANG:0:2}"
 if [ "$SYS_LANG" = "es" ]; then
-    MSG_INFO_TITLE="Fina Ergen - ¡Primer Contacto!"
+    MSG_INFO_TITLE="Fina Seinen - ¡Primer Contacto!"
     MSG_INFO_TEXT="Fina está construyendo su cerebro para adaptarse a esta computadora.\n\n⚠️ ¡ATENCIÓN!\nEste proceso puede parecer CONGELADO durante 10 a 20 minutos más adelante (estará compilando en profundo).\n\nPor favor, NO CIERRES NINGUNA VENTANA aunque veas que la barra de progreso no avanza. ¡Prepará un café ☕ mientras espero!"
-    MSG_PROG_TITLE="Instalador de Fina Ergen"
+    MSG_PROG_TITLE="Instalador de Fina Seinen"
     MSG_PROG_TEXT="Iniciando configuración inicial..."
     MSG_STEP_1="# Actualizando herramientas base de Python..."
     MSG_STEP_2="# Descargando servicios y drivers..."
@@ -130,9 +130,9 @@ if [ "$SYS_LANG" = "es" ]; then
     MSG_STEP_4="# ⚙️ ADAPTACIÓN A TU PC: COMPILANDO C++ (ESTO PUEDE TARDAR HASTA 20 MINUTOS)..."
     MSG_STEP_FIN="# ¡Todo listo! Despertando el núcleo..."
 else
-    MSG_INFO_TITLE="Fina Ergen - First Contact!"
+    MSG_INFO_TITLE="Fina Seinen - First Contact!"
     MSG_INFO_TEXT="Fina is building its brain to adapt to this computer.\n\n⚠️ ATTENTION!\nThis process may appear FROZEN for 10 to 20 minutes later on (deep compilation in progress).\n\nPlease DO NOT CLOSE ANY WINDOWS even if the progress bar doesn't advance. Brew some coffee ☕ while I wait!"
-    MSG_PROG_TITLE="Fina Ergen Installer"
+    MSG_PROG_TITLE="Fina Seinen Installer"
     MSG_PROG_TEXT="Starting initial configuration..."
     MSG_STEP_1="# Updating base Python tools..."
     MSG_STEP_2="# Downloading services and drivers..."
@@ -172,7 +172,7 @@ if [ -f "$PYTHON_BIN" ]; then
                 "$PYTHON_BIN" -m pip install resemblyzer torch --extra-index-url https://download.pytorch.org/whl/cpu >/dev/null 2>&1
                 
                 echo "$MSG_STEP_4"; echo "70"
-                "$PYTHON_BIN" -m pip install -r "$ERGEN_ROOT/requirements.txt" >/dev/null 2>&1 &
+                "$PYTHON_BIN" -m pip install -r "$SEINEN_ROOT/requirements.txt" >/dev/null 2>&1 &
                 PIP_PID=$!
                 
                 # Bucle para simular progreso para usuarios ansiosos
@@ -198,7 +198,7 @@ if [ -f "$PYTHON_BIN" ]; then
         else
             # Instalación silenciosa
             echo "📦 Instalando dependencias silenciosamente..."
-            "$PYTHON_BIN" -m pip install -r "$ERGEN_ROOT/requirements.txt" --quiet >/dev/null 2>&1 || true
+            "$PYTHON_BIN" -m pip install -r "$SEINEN_ROOT/requirements.txt" --quiet >/dev/null 2>&1 || true
             touch "$HOME/.config/Fina/.installed"
         fi
     else
@@ -215,7 +215,7 @@ echo "🚀 Usando entorno: $PYTHON_BIN"
 echo "🧹 Limpiando procesos previos de Fina..."
 pkill -9 -f "fina_api.py" >/dev/null 2>&1
 pkill -9 -f "main.py" >/dev/null 2>&1
-pkill -9 -f "monitor_ergen.py" >/dev/null 2>&1
+pkill -9 -f "monitor_seinen.py" >/dev/null 2>&1
 
 # Solo matamos lo que esté en el 18000 si es necesario
 for i in {1..2}; do
@@ -225,30 +225,30 @@ for i in {1..2}; do
 done
 
 # 5. Migración de Configuración y Permisos
-if [ ! -f "$HOME/.config/Fina/settings.json" ] && [ -f "$ERGEN_ROOT/fina_settings.json" ]; then
+if [ ! -f "$HOME/.config/Fina/settings.json" ] && [ -f "$SEINEN_ROOT/fina_settings.json" ]; then
     echo "📄 Migrando settings.json inicial..."
-    cp "$ERGEN_ROOT/fina_settings.json" "$HOME/.config/Fina/settings.json"
+    cp "$SEINEN_ROOT/fina_settings.json" "$HOME/.config/Fina/settings.json"
 fi
 
 # DIAGNÓSTICO: Ver qué hay realmente en la raíz
-echo "🔍 Listado de archivos en Raíz ($ERGEN_ROOT):"
-ls -F "$ERGEN_ROOT" | head -n 30
+echo "🔍 Listado de archivos en Raíz ($SEINEN_ROOT):"
+ls -F "$SEINEN_ROOT" | head -n 30
 
-if [ -d "$ERGEN_ROOT/plugins" ]; then
+if [ -d "$SEINEN_ROOT/plugins" ]; then
     echo "🔍 Listado de Plugins detectados en resources:"
-    ls -F "$ERGEN_ROOT/plugins"
+    ls -F "$SEINEN_ROOT/plugins"
 fi
 
 # Asegurar permisos de ejecución en binarios críticos dentro de recursos
 echo "🔑 Asegurando permisos de ejecución..."
 # Buscar Piper en múltiples profundidades posibles por si Tauri cambió la estructura
 PIPER_LOCS=(
-    "$ERGEN_ROOT/binaries/piper/piper"
-    "$ERGEN_ROOT/binaries/piper-x86_64-unknown-linux-gnu"
-    "$ERGEN_ROOT/bin/piper"
-    "$ERGEN_ROOT/piper"
-    "$ERGEN_ROOT/piper-x86_64-unknown-linux-gnu"
-    "$(find "$ERGEN_ROOT" -name "piper*" -type f 2>/dev/null | head -n 3)"
+    "$SEINEN_ROOT/binaries/piper/piper"
+    "$SEINEN_ROOT/binaries/piper-x86_64-unknown-linux-gnu"
+    "$SEINEN_ROOT/bin/piper"
+    "$SEINEN_ROOT/piper"
+    "$SEINEN_ROOT/piper-x86_64-unknown-linux-gnu"
+    "$(find "$SEINEN_ROOT" -name "piper*" -type f 2>/dev/null | head -n 3)"
 )
 
 for LOC in "${PIPER_LOCS[@]}"; do
@@ -258,12 +258,12 @@ for LOC in "${PIPER_LOCS[@]}"; do
     fi
 done
 
-chmod +x "$ERGEN_ROOT/fina_api.py" "$ERGEN_ROOT/main.py" 2>/dev/null || true
+chmod +x "$SEINEN_ROOT/fina_api.py" "$SEINEN_ROOT/main.py" 2>/dev/null || true
 
 # 6. Lanzamiento
-cd "$ERGEN_ROOT"
+cd "$SEINEN_ROOT"
 export PYTHONUNBUFFERED=1
-export PYTHONPATH="$ERGEN_ROOT"
+export PYTHONPATH="$SEINEN_ROOT"
 
 echo "🔌 Backend API..."
 "$PYTHON_BIN" fina_api.py > "$LOG_DIR/api_services.log" 2>&1 &

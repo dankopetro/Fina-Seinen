@@ -1,5 +1,5 @@
 ---
-description: Protocolo de Publicación de Releases en GitHub para Fina Ergen
+description: Protocolo de Publicación de Releases en GitHub para Fina Seinen
 ---
 
 Este protocolo es de cumplimiento OBLIGATORIO para el Agente AI (Antigravity) cada vez que el usuario solicite un lanzamiento o release en GitHub.
@@ -16,13 +16,13 @@ Este protocolo es de cumplimiento OBLIGATORIO para el Agente AI (Antigravity) ca
 ### 🚀 ¿Qué archivo descargar en cada Release?
 A partir de las versiones `v3.5.x`, en la página de **Releases** encontrarás dos formatos de instaladores `.AppImage`:
 
-1.  **📦 fina-ergen_v..._amd64.deb**: Versión para sistemas basados en Debian (Ubuntu/Mint).
-2.  **📦 fina-ergen-v...-1.x86_64.rpm**: Versión nativa para Fedora, CentOS, openSUSE y sistemas basados en RedHat.
-3.  **📦 fina-ergen_v..._patched_amd64.AppImage (RECOMENDADO)**: Versión universal reempaquetada y optimizada. Tiene compresión **XZ** y parches vitales (`libfuse2`) para garantizar integración en sistemas modernos (Ubuntu 24.04+).
-4.  **📦 fina-ergen_v..._amd64.AppImage**: Versión cruda del compilador Tauri. Usar si la opción parcheada falla.
+1.  **📦 fina-seinen_v..._amd64.deb**: Versión para sistemas basados en Debian (Ubuntu/Mint).
+2.  **📦 fina-seinen-v...-1.x86_64.rpm**: Versión nativa para Fedora, CentOS, openSUSE y sistemas basados en RedHat.
+3.  **📦 fina-seinen_v..._patched_amd64.AppImage (RECOMENDADO)**: Versión universal reempaquetada y optimizada. Tiene compresión **XZ** y parches vitales (`libfuse2`) para garantizar integración en sistemas modernos (Ubuntu 24.04+).
+4.  **📦 fina-seinen_v..._amd64.AppImage**: Versión cruda del compilador Tauri. Usar si la opción parcheada falla.
 
 ---
-_Creado con amor por el equipo de Fina Ergen. ¡Gracias por instalar!_ 🤖✨
+_Creado con amor por el equipo de Fina Seinen. ¡Gracias por instalar!_ 🤖✨
 ```
 
 ### 🛠️ PROCEDIMIENTO TÉCNICO
@@ -46,4 +46,4 @@ Antes de crear el Tag o el Release, verifica que los siguientes archivos tengan 
 2.  Subir cambios y tags: `git push origin master && git push origin v3.x.x-x`.
 
 #### 3. Publicación
-1.  Lanzar el release: `gh release create v... --title "Fina Ergen v..." --notes-file /tmp/notes.md`.
+1.  Lanzar el release: `gh release create v... --title "Fina Seinen v..." --notes-file /tmp/notes.md`.

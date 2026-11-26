@@ -7,7 +7,7 @@ import sys
 
 THRESHOLD = 92.0  # Límite de RAM
 PROCESS_NAMES = [
-    "fina-ergen", "ergen_brain.py", "monitor_ergen.py", "main.py", "fina_api.py",
+    "fina-seinen", "seinen_brain.py", "monitor_seinen.py", "main.py", "fina_api.py",
     "streamer.py", "scrcpy", "ffmpeg", "npm", "node", "vite"
 ]
 

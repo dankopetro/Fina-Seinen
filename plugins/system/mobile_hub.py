@@ -3,7 +3,7 @@ import json
 import os
 import sys
 
-# --- FINA ERGEN: MOTOR DE INYECCIÓN UNIFICADO ---
+# --- FINA SEINEN: MOTOR DE INYECCIÓN UNIFICADO ---
 
 class UniversalMobileHub:
     def __init__(self, ip="127.0.0.1", silent=False):

@@ -13,7 +13,7 @@ except ImportError:
     sys.exit(1)
 
 def run_voice_train(user="Administrador"):
-    print("\n🎙  ENTRENAMIENTO DE VOZ - FINA ERGEN")
+    print("\n🎙  ENTRENAMIENTO DE VOZ - FINA SEINEN")
     print(f"   Usuario: {user}")
     print("------------------------------------------")
     print("Siga las instrucciones en pantalla y hable claro.")

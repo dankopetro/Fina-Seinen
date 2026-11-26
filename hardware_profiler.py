@@ -1,5 +1,5 @@
 """
-hardware_profiler.py — Fina Ergen Universal Adaptive Architecture
+hardware_profiler.py — Fina Seinen Universal Adaptive Architecture
 Detecta el perfil de hardware real de la máquina y elige el tier óptimo.
 
 Tiers:

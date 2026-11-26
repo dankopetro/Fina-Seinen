@@ -1,10 +1,9 @@
 [package]
-name = "fina-ergen"
-version = "0.1.0"
+name = "fina-seinen"
+version = "0.1.11"
 description = "El Asistente de Voz Modular y Domótico para Linux"
 authors = ["Danko Petro <fina.assistant@proton.me>"]
-homepage = "https://github.com/dankopetro/Fina-Ergen"
-repository = "https://github.com/dankopetro/Fina-Ergen"
+repository = "https://github.com/dankopetro/Fina-Seinen"
 license = "MIT"
 edition = "2021"
 
@@ -14,7 +13,7 @@ edition = "2021"
 # The `_lib` suffix may seem redundant but it is necessary
 # to make the lib name unique and wouldn't conflict with the bin name.
 # This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
-name = "fina_ergen_lib"
+name = "fina_seinen_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]

@@ -1,4 +1,4 @@
-# 📋 Dominios de Inteligencia - Fina Ergen v3.5.9
+# 📋 Dominios de Inteligencia - Fina Seinen v3.5.9
 
 Este documento detalla los elementos que faltan integrar o expandir en los distintos "dominios" de Fina para alcanzar la cobertura total de una casa inteligente de última generación.
 

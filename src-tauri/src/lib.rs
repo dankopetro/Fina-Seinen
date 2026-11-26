@@ -12,7 +12,7 @@ fn kill_children() {
     let _ = Command::new("pkill").args(&["-9", "-f", "main.py"]).output(); 
     let _ = Command::new("pkill").args(&["-9", "-f", "mobile_hub.py"]).output();
     let _ = Command::new("pkill").args(&["-9", "-f", "network_scan.py"]).output();
-    let _ = Command::new("pkill").args(&["-9", "-f", "monitor_ergen.py"]).output();
+    let _ = Command::new("pkill").args(&["-9", "-f", "monitor_seinen.py"]).output();
     let _ = Command::new("pkill").args(&["-9", "-f", "doorbell_final_app.py"]).output();
     let _ = Command::new("pkill").args(&["-9", "-f", "kdocker"]).output();
     let _ = Command::new("pkill").args(&["-9", "piper"]).output();

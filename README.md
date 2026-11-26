@@ -10,12 +10,12 @@
 <p align="center">
   <a href="#caracteristicas">Características</a> •
   <a href="#arquitectura">Arquitectura Modular</a> •
-  <a href="https://github.com/dankopetro/Fina-Ergen/wiki">📚 CÓDICE MAESTRO (Wiki)</a> •
+  <a href="https://github.com/dankopetro/Fina-Seinen/wiki">📚 CÓDICE MAESTRO (Wiki)</a> •
   <a href="#instalacion">Instalación Rápida</a>
 </p>
 
 <p align="center">
-  <img src="manual_images/ui_check.png" width="800" alt="Fina Ergen Interface">
+  <img src="manual_images/ui_check.png" width="800" alt="Fina Seinen Interface">
 </p>
 
 ---
@@ -49,7 +49,7 @@ Ver detalles en [AGENTS.md § 5.2](AGENTS.md).
 
 ---
 
-**Fina Ergen** no es solo un script; es un cerebro avanzado que corre localmente en tu sistema Linux con una hermosa interfaz nativa de escritorio (Tauri/Vue). Diseñada para procesar lenguaje natural en español con extrema rapidez offline, Fina es capaz de todo: desde hablarte con voces hiperrealistas y autenticarte por biometría dual, hasta controlar toda la domótica de tu casa (Cámaras, Android TV, Aire Acondicionado) mediante su increíble arquitectura de plugins.
+**Fina Seinen** no es solo un script; es un cerebro avanzado que corre localmente en tu sistema Linux con una hermosa interfaz nativa de escritorio (Tauri/Vue). Diseñada para procesar lenguaje natural en español con extrema rapidez offline, Fina es capaz de todo: desde hablarte con voces hiperrealistas y autenticarte por biometría dual, hasta controlar toda la domótica de tu casa (Cámaras, Android TV, Aire Acondicionado) mediante su increíble arquitectura de plugins.
 
 <a id="caracteristicas"></a>
 ## ✨ Características Principales
@@ -93,17 +93,17 @@ uv sync
 
 Esta secuencia usa el `pyproject.toml` y `uv.lock` para reproducir exactamente el mismo entorno en cualquier máquina.
 
-A partir de la versión v3.5.4, Fina Ergen es 100% modular y autodependiente. Ya no necesitas clonar el código fuente. Dirígete a la pestaña de **Releases** en GitHub y descarga el instalador que mejor se adapte a tu distribución Linux:
+A partir de la versión v0.1.11, Fina Seinen es 100% modular y autodependiente. Ya no necesitas clonar el código fuente. Dirígete a la pestaña de **Releases** en GitHub y descarga el instalador que mejor se adapte a tu distribución Linux:
 
 ### 1. Instaladores Nativos (Ubuntu / Debian / Fedora)
 Son la vía más integrada. Descarga el paquete e instálalo con tu gestor habitual:
-- **Para Ubuntu/Debian/Mint:** Descarga el archivo `.deb` e instálalo con `sudo dpkg -i fina-ergen_..._amd64.deb`
-- **Para Fedora/RHEL:** Descarga el archivo `.rpm` e instálalo con `sudo rpm -i fina-ergen_..._x86_64.rpm`
+- **Para Ubuntu/Debian/Mint:** Descarga el archivo `.deb` e instálalo con `sudo dpkg -i fina-seinen_..._amd64.deb`
+- **Para Fedora/RHEL:** Descarga el archivo `.rpm` e instálalo con `sudo rpm -i fina-seinen_..._x86_64.rpm`
 
 ### 2. Formato Portable (AppImage)
 Si prefieres no instalar nada a nivel sistema, descarga una de nuestras versiones AppImage. Solo dale permisos de ejecución (`chmod +x archivo.AppImage`) y lánzalo.
-* **fina-ergen_..._amd64.AppImage (Recomendado):** Comprimida en formato XZ (pesa solo unos ~25MB). Contiene parches para mostrar correctamente los íconos del sistema en Ubuntu 24.04 y superior.
-* **fina-ergen_..._x86_64.AppImage:** Versión AppImage genérica cruda producida por el compilador para compatibilidad heredada.
+* **fina-seinen_..._amd64.AppImage (Recomendado):** Comprimida en formato XZ (pesa solo unos ~25MB). Contiene parches para mostrar correctamente los íconos del sistema en Ubuntu 24.04 y superior.
+* **fina-seinen_..._x86_64.AppImage:** Versión AppImage genérica cruda producida por el compilador para compatibilidad heredada.
 
 ---
 
@@ -112,7 +112,7 @@ Si prefieres no instalar nada a nivel sistema, descarga una de nuestras versione
 Fina viene "pelada" de fábrica para ser rapidísima. Todo el control de aparatos IoT, TV y automatizaciones de terceros se descarga por separado mediante un Market. Tienes dos maneras de hacerlo:
 
 ### Vía Interfaz (Recomendada)
-1. Abre Fina Ergen y dirígete al botón **Market de Plugins** (actualmente visible en la sección *Agenda*).
+1. Abre Fina Seinen y dirígete al botón **Market de Plugins** (actualmente visible en la sección *Agenda*).
 2. Explora el repertorio, haz clic en **Instalar** al plugin que desees y Fina se encargará de descargarlo, inyectarlo en tu perfil de usuario y encenderlo automáticamente.
 
 ### Vía Manual
@@ -120,12 +120,12 @@ Fina viene "pelada" de fábrica para ser rapidísima. Todo el control de aparato
 2. Descarga la carpeta de la extensión que te interese (ej: `AirConditioning/Midea-Surrey`).
 3. Cópiala en la carpeta de configuraciones de tu usuario de Linux:
    `~/.config/Fina/plugins/` *(Ej: `~/.config/Fina/plugins/AirConditioning/Midea-Surrey/`)*
-4. Reinicia Fina Ergen para cargarla.
+4. Reinicia Fina Seinen para cargarla.
 ## 📚 Códice Maestro (Wiki Oficial)
 
 Toda la documentación técnica exhaustiva, guías de usuario y manuales del sistema han sido iterados y migrados al gigantesco **Códice Maestro** alojado directamente en nuestra Wiki. Es la fuente de verdad absoluta para domar al asistente:
 
-- 📖 [**Explorar la Wiki Oficial de Fina Ergen**](https://github.com/dankopetro/Fina-Ergen/wiki)
+- 📖 [**Explorar la Wiki Oficial de Fina Seinen**](https://github.com/dankopetro/Fina-Seinen/wiki)
 - 🧩 [**Guía de Creación de Plugins (SDK)**](https://github.com/dankopetro/Fina-Plugins-Market): Aprende a desarrollar tus propios módulos y arquitecturas IoT leyendo los estándares oficiales directamente en el Market.
 
 ## 🔮 Roadmap v4.0 (El Futuro)
@@ -138,7 +138,7 @@ Fina no conoce techo. Hacia adelante, el vector principal de evolución se ancla
 
 ## 💖 Apoya el Proyecto
 
-Si Fina Ergen te ha sido útil y quieres apoyar su continuo desarrollo, puedes invitarme un café o realizar una donación. ¡Toda ayuda es bienvenida para seguir mejorando el asistente!
+Si Fina Seinen te ha sido útil y quieres apoyar su continuo desarrollo, puedes invitarme un café o realizar una donación. ¡Toda ayuda es bienvenida para seguir mejorando el asistente!
 
 | Plataforma | Link |
 | :--- | :--- |

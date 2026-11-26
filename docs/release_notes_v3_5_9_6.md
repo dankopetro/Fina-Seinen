@@ -1,4 +1,4 @@
-# 🚀 Fina Ergen - Release Notes v3.5.9-6 (Primer Contacto Perfecto)
+# 🚀 Fina Seinen - Release Notes v3.5.9-6 (Primer Contacto Perfecto)
 
 ## 🌟 Resumen
 Esta actualización se enfoca por completo en mejorar la experiencia de primer uso (First Boot) para usuarios novatos y en perfeccionar la portabilidad del empaquetado AppImage. Hemos logrado un entorno de instalación empático, transparente y guiado visualmente sin tocar la terminal.
@@ -22,4 +22,4 @@ Esta actualización se enfoca por completo en mejorar la experiencia de primer u
 
 ---
 Hecho con ❤️ en Argentina.
-#FinaErgen #AIAsistente #Domotica #Linux
+#FinaSeinen #AIAsistente #Domotica #Linux

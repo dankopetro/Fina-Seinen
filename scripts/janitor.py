@@ -6,7 +6,7 @@ import time
 import sys
 
 def purge_fina():
-    print("🧹 Iniciando Purga Atómica de Fina Ergen...")
+    print("🧹 Iniciando Purga Atómica de Fina Seinen...")
     
     # 1. Intentar cierre ordenado de Waydroid primero
     try:
@@ -15,7 +15,7 @@ def purge_fina():
 
     # 2. Patrones de procesos a eliminar (Más específicos para UI, WebKit y DevServer)
     patterns = [
-        "main.py", "fina_api.py", "monitor_ergen.py", 
+        "main.py", "fina_api.py", "monitor_seinen.py", 
         "weston", "waydroid", "fina-app", "piper", 
         "doorbell", "tauri", "uvicorn", "scrcpy",
         "node", "vite-dev", "cargo-tauri", "npm",

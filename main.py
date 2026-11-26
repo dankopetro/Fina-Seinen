@@ -297,7 +297,7 @@ async def resolve_contact_proactive(query, contacts, voice_model, model_for_list
     return None, None
 
 # --- Metadata del Sistema ---
-FINA_VERSION = "Fina Ergen v 3.6.0"
+FINA_VERSION = "Fina Seinen v0.1.11"
 FINA_AUTHOR = "Dankopetro"
 FINA_CREATED = "el 04 de Marzo de 2026 a las 12:15"
 
@@ -379,25 +379,25 @@ def get_current_voice_info():
 
 # Setup checks for required files ---
 if not CONFIG_FOUND:
-    print("\n⚠️ AVISO: Fina Ergen está en MODO INICIAL.")
+    print("\n⚠️ AVISO: Fina Seinen está en MODO INICIAL.")
     print("  - No se encontró config.py. Esto es normal si es la primera vez.")
     print("  - El sistema funcionará con capacidades limitadas hasta ser configurado.")
     # No salimos: sys.exit(1) removido
 
-# Logger Setup (Centralized in Ergen Root)
+# Logger Setup (Centralized in Seinen Root)
 # Logger Setup Centralizado en utils.py
 # Simplemente obtenemos el logger (utils ya configuró el root)
 logger = logging.getLogger("FinaPlugins")
 logger.setLevel(logging.DEBUG)
  # Ya importado arriba
-logger.info(f"--- FINA ERGEN MAIN INICIADO ---")
+logger.info(f"--- FINA SEINEN MAIN INICIADO ---")
 
 async def main():
     """Main interaction loop"""
 
     # DEBUG LOG DE ARRANQUE
     with open("/tmp/fina_main_debug.log", "w") as f:
-        f.write(f"Iniciando Fina Ergen Main...\n")
+        f.write(f"Iniciando Fina Seinen Main...\n")
         f.write(f"CWD: {os.getcwd()}\n")
         f.write(f"PROJECT_ROOT: {PROJECT_ROOT}\n")
         f.write(f"Python: {sys.executable}\n")
@@ -422,7 +422,7 @@ async def main():
         
         import threading
         # --- INICIO DE FEEDBACK VISUAL INMEDIATO ---
-        update_ui_state("idle", "Iniciando Fina Ergen...")
+        update_ui_state("idle", "Iniciando Fina Seinen...")
         time.sleep(0.3)
         
         # --- CARGA ASÍNCRONA DE MOTORES PESADOS (FONDO) ---

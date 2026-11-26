@@ -1,7 +1,7 @@
-# INTEGRACIÓN Y ESTABILIZACIÓN DEL SISTEMA DE TIMBRE (DOORBELL) - FINA ERGEN
+# INTEGRACIÓN Y ESTABILIZACIÓN DEL SISTEMA DE TIMBRE (DOORBELL) - FINA SEINEN
 
 ## Fecha: 2026-02-19
-## Módulos Afectados: Fina UI (`App.vue`), Monitor (`monitor_ergen.py`), Test (`test_doorbell.py`)
+## Módulos Afectados: Fina UI (`App.vue`), Monitor (`monitor_seinen.py`), Test (`test_doorbell.py`)
 
 ---
 
@@ -19,7 +19,7 @@ Garantizar que cuando alguien toque el timbre (o cuando se simule con el script 
 - Ahora, cuando los scripts de Python detectan el timbre, envían una petición HTTP POST redundante directamente a `http://127.0.0.1:18000/api/command` asegurando que la UI abra y cierre la ventana de vídeo de inmediato.
 
 ### 2. Flujo Lineal y a Prueba de Errores en la Secuencia
-**Archivos:** `plugins/doorbell/monitor_ergen.py` & `plugins/doorbell/test_doorbell.py`
+**Archivos:** `plugins/doorbell/monitor_seinen.py` & `plugins/doorbell/test_doorbell.py`
 - Se corrigieron errores de anidación (IndentationErrors) que impedían que la secuencia de colgado se ejecutara correctamente.
 - La secuencia final ahora es **estricta y lineal**, asegurando que el colgado de la llamada y la limpieza se ejecuten SIEMPRE, incluso si llegara a fallar el enrutamiento de audio del micrófono.
 
@@ -54,7 +54,7 @@ Garantizar que cuando alguien toque el timbre (o cuando se simule con el script 
 1. **`./src/App.vue`**
    - Lógica añadida en el `setInterval` de polling para procesar `cmd.name === 'doorbell-ring'` y `doorbell-hangup`.
 
-2. **`./plugins/doorbell/monitor_ergen.py`**
+2. **`./plugins/doorbell/monitor_seinen.py`**
    - Notificación vía requests HTTP a la API.
    - Secuencia de "sacudida" inicial.
    - Reestructuración de bloque Try-Catch para asegurar el colgado.

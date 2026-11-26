@@ -1,12 +1,12 @@
-# Historial de Versiones (Changelog) - Fina Ergen
+# Historial de Versiones (Changelog) - Fina Seinen
 
 Todas las actualizaciones y cambios notables de este proyecto serán documentados en este archivo.
 
 ## 🚀 ¿Qué archivo descargar en cada Release?
 A partir de las versiones `v3.5.x`, en la página de **Releases** encontrarás dos formatos de instaladores `.AppImage`:
 
-1.  **fina-ergen_v..._amd64.AppImage (RECOMENDADO)**: Es una versión reempaquetada y optimizada. Tiene compresión **XZ** (pesa un 35% menos y se descarga más rápido) y contiene parches vitales de librerías (`libfuse2`) para garantizar que el ícono de la aplicación y la integración de escritorio funcionen perfectamente en sistemas modernos como Ubuntu 24.04+ y Linux Mint 22+.
-2.  **fina-ergen_v..._x86_64.AppImage**: Es el archivo genérico y crudo generado por el compilador de Tauri. Si la primera opción falla en tu distribución, siempre puedes recurrir a este.
+1.  **fina-seinen_v..._amd64.AppImage (RECOMENDADO)**: Es una versión reempaquetada y optimizada. Tiene compresión **XZ** (pesa un 35% menos y se descarga más rápido) y contiene parches vitales de librerías (`libfuse2`) para garantizar que el ícono de la aplicación y la integración de escritorio funcionen perfectamente en sistemas modernos como Ubuntu 24.04+ y Linux Mint 22+.
+2.  **fina-seinen_v..._x86_64.AppImage**: Es el archivo genérico y crudo generado por el compilador de Tauri. Si la primera opción falla en tu distribución, siempre puedes recurrir a este.
 
 ---
 
@@ -149,7 +149,7 @@ Esta actualización resuelve fricciones de portabilidad, automatiza servicios e 
 
 ### Añadido
 * **Manual Visual de Usuario (10 Páginas)**: Guía práctica basada en 27 capturas reales de la interfaz. Ubicación: `docs/Manual_Usuario_Visual_Fina_v3.5.4.pdf` (Incluido en instaladores).
-* **Manual Enciclopédico (20 Páginas)**: Tratado técnico avanzado del ecosistema Fina. Ubicación: `docs/Manual_Usuario_Fina_Ergen_v3.5.4.pdf`.
+* **Manual Enciclopédico (20 Páginas)**: Tratado técnico avanzado del ecosistema Fina. Ubicación: `docs/Manual_Usuario_Fina_Seinen_v3.5.4.pdf`.
 * **Auditoría de Servicios (Persistence Logs)**: Registro automático en `~/.config/Fina/fina_services.log` para servicios de fondo.
 
 ### Arreglado
@@ -158,7 +158,7 @@ Esta actualización resuelve fricciones de portabilidad, automatiza servicios e 
 * **Escaneo de Red Nativo**: Migración a comando Tauri de Rust para mayor velocidad y fiabilidad en el arranque.
 
 ## [v3.5.4-12] - 2026-02-21 (Edición Universal)
-Esta versión marca un hito en el ciclo de vida de Fina Ergen, convirtiéndola en una aplicación 100% autodependiente e independiente de la ubicación donde se empaquete e instale.
+Esta versión marca un hito en el ciclo de vida de Fina Seinen, convirtiéndola en una aplicación 100% autodependiente e independiente de la ubicación donde se empaquete e instale.
 
 ### Añadido
 * **Universalidad Total**: Fina ya no depende de rutas de código estáticas (como `/home/usuario/Descargas/Fina`). Ahora todas las rutas internas de ejecución (Python path, Root, Carpetas Temporales) se detectan de forma dinámica y se le comunican a la Interfaz Visual (UI) en el tiempo de arranque.

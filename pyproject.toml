@@ -1,6 +1,6 @@
 [project]
 name = "fina-seinen"
-version = "0.1.0"
+version = "0.1.11"
 description = "Asistente de voz para Linux – versión modernizada"
 authors = [{name = "Claudio"}]
 license = {text = "Apache-2.0"}

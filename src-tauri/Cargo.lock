@@ -901,8 +901,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "fina-ergen"
-version = "0.1.0"
+name = "fina-seinen"
+version = "0.1.11"
 dependencies = [
  "serde",
  "serde_json",

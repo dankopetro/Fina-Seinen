@@ -1,7 +1,7 @@
 {
-  "name": "fina-ergen",
+  "name": "fina-seinen",
   "private": true,
-  "version": "3.6.0",
+  "version": "0.1.11",
   "type": "module",
   "scripts": {
     "dev": "vite",

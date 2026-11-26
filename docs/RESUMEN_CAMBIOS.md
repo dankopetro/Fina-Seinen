@@ -175,4 +175,4 @@
 - **Radar de Dispositivos**: Al arrancar, Fina informa si la televisión está enlazada o fuera de línea de forma proactiva.
 
 ---
-**Próximo Proyecto:** Desarrollo de **Fina-Ergen** (Adolescente). Interfaz renovada, IA más fluida y expansión del ecosistema.
+**Próximo Proyecto:** Desarrollo de **Fina-Seinen** (Adolescente). Interfaz renovada, IA más fluida y expansión del ecosistema.

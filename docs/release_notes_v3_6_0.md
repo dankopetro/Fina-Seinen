@@ -1,8 +1,8 @@
-# Fina Ergen V3.6.0 - Notas de la Versión (Release Notes)
+# Fina Seinen V3.6.0 - Notas de la Versión (Release Notes)
 
 🎉 **¡Gran Actualización Estructural y Domótica!**
 
-Esta versión 3.6.0 marca un hito en la expansión de capacidades "Smart Home" de Fina Ergen, transformándola en un centro verdaderamente modular y universal para administrar el hábitat completo del usuario sin complejas configuraciones.
+Esta versión 3.6.0 marca un hito en la expansión de capacidades "Smart Home" de Fina Seinen, transformándola en un centro verdaderamente modular y universal para administrar el hábitat completo del usuario sin complejas configuraciones.
 
 ## 🌟 Novedades y Funciones
 

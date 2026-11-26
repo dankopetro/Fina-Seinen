@@ -1,12 +1,12 @@
-# AGENTS.md — Fina Ergen (Arquitectura Universal Adaptativa)
+# AGENTS.md — Fina Seinen (Arquitectura Universal Adaptativa)
 
-Este documento sirve como guía técnica, arquitectónica y de contexto para cualquier agente o desarrollador que trabaje en **Fina Ergen** (tanto en esta base **Lite** de laboratorio como en el repositorio principal / nueva versión unificada).
+Este documento sirve como guía técnica, arquitectónica y de contexto para cualquier agente o desarrollador que trabaje en **Fina Seinen** (tanto en esta base **Lite** de laboratorio como en el repositorio principal / nueva versión unificada).
 
 ---
 
 ## 1. Visión y Objetivo del Proyecto
 
-**Fina Ergen** es un asistente de voz modular, offline-first, multilingüe y domótico para escritorio Linux (con proyección multiplataforma).
+**Fina Seinen** es un asistente de voz modular, offline-first, multilingüe y domótico para escritorio Linux (con proyección multiplataforma).
 
 ### Cambio de Paradigma: De dos ramas ("Principal" vs "Lite") a un Solo Instalador Adaptativo
 En lugar de mantener dos versiones separadas, **Fina debe distribuirse en un único paquete universal** que, al instalarse y arrancar en cualquier PC o notebook (armada o de marca, en cualquier idioma del mundo), **detecte automáticamente su hardware real** y active los motores óptimos para esa máquina — permitiendo además al usuario ajustar o forzar su perfil manualmente desde la UI.
@@ -54,8 +54,8 @@ El sistema corre dividido en tres capas coordinadas:
 ## 3. Estado Actual de esta Carpeta (2026)
 
 ### Ya implementado (26/04/2026)
-- `productName` en [src-tauri/tauri.conf.json](src-tauri/tauri.conf.json) configurado como `"Fina-Ergen Lite"` v3.6.0 y `.deb` generado.
-- Rutas de recursos para `Fina-Ergen Lite` y `fina-ergen-lite` agregadas en `brain-x86_64-unknown-linux-gnu` y `utils.py`.
+- `productName` en [src-tauri/tauri.conf.json](src-tauri/tauri.conf.json) configurado como `"Fina-Seinen Lite"` v3.6.0 y `.deb` generado.
+- Rutas de recursos para `Fina-Seinen Lite` y `fina-seinen-lite` agregadas en `brain-x86_64-unknown-linux-gnu` y `utils.py`.
 - `resemblyzer` deshabilitado en [auth/voice_auth.py](auth/voice_auth.py) (`HAS_RESEMBLYZER = False`), manteniendo huella (`fprintd`) y contraseña.
 - Reducción de polling en [src/App.vue](src/App.vue) y [main.py](main.py), eliminación de la mayoría de `backdrop-blur`, y Vosk restringido a modelos `small`.
 
@@ -124,7 +124,7 @@ Se dispara al crear un tag `v*` (ej: `git tag v0.1.10 && git push origin v0.1.10
 |---|---|---|
 | `failed to run linuxdeploy` | `tauri-action` con `--bundles deb,appimage` | Usar `npm run tauri:deb` directo (sin `tauri-action` para el build) |
 | `File exists (.venv)` | `.venv` era symlink trackeado en git | `git rm --cached .venv` + agregar `.venv` a `.gitignore` |
-| `fatal: No url found for submodule docs/Fina-Ergen.wiki` | Gitlink roto en el índice | `git rm --cached docs/Fina-Ergen.wiki` |
+| `fatal: No url found for submodule docs/Fina-Seinen.wiki` | Gitlink roto en el índice | `git rm --cached docs/Fina-Seinen.wiki` |
 | `AppDir mode 0700` | `mktemp -d` crea con permisos restrictivos | `chmod 755 "$APPDIR"` inmediatamente después |
 | `Compressor "xz" is not supported` | `appimagetool` moderno solo trae `zstd` | Quitar `--comp xz`; dejar compresión por defecto |
 

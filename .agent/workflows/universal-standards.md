@@ -1,7 +1,7 @@
 ---
-description: Estándares de Codificación Universal y Portabilidad para Fina Ergen
+description: Estándares de Codificación Universal y Portabilidad para Fina Seinen
 ---
-Este documento es de lectura OBLIGATORIA antes de cada modificación de código. Define las reglas críticas para mantener a Fina Ergen funcional en cualquier entorno Linux.
+Este documento es de lectura OBLIGATORIA antes de cada modificación de código. Define las reglas críticas para mantener a Fina Seinen funcional en cualquier entorno Linux.
 
 ### 🚫 REGLAS DE ORO (PROHIBIDO)
 1.  **CERO Rutas Hardcoded**: Nunca uses `/home/claudio`, `/home/admin` o similares.
@@ -25,4 +25,4 @@ Este documento es de lectura OBLIGATORIA antes de cada modificación de código.
 - [ ] ¿He sincronizado y subido los cambios al repositorio independiente del Market (en `.local_lab/Fina-Plugins-Market-Working/`) si hubo cambios en plugins?
 - [ ] ¿El acceso directo (.desktop) generado es relativo al HOME del usuario actual?
 
-*Fina Ergen es para todos los humanos, no solo para su desarrollador.*
+*Fina Seinen es para todos los humanos, no solo para su desarrollador.*

@@ -12,14 +12,14 @@ LOG_API="$LOG_DIR/api_$HORA.log"
 LOG_BRAIN="$LOG_DIR/brain_$HORA.log"
 LOG_UI="$LOG_DIR/ui_tauri_$HORA.log"
 
-echo "🔥 Iniciando Fina Ergen (Modo Completo)..."
+echo "🔥 Iniciando Fina Seinen (Modo Completo)..."
 echo "📂 Logs en: $LOG_DIR"
 
 # 1. Matar viejos procesos
 echo "🧹 Limpiando procesos antiguos..."
 pkill -f "fina_api.py"
 pkill -f "$ROOT_DIR/main.py"
-pkill -f "monitor_ergen.py"
+pkill -f "monitor_seinen.py"
 pkill -f "mem_watchdog.py"
 pkill -f "weston"
 pkill -f "fina-app"
@@ -91,7 +91,7 @@ fi
 
 API="fina_api.py"
 BRAIN="main.py"
-MONITOR="plugins/doorbell/monitor_ergen.py" 
+MONITOR="plugins/doorbell/monitor_seinen.py" 
 WATCHDOG="mem_watchdog.py"
 
 # 3. Lanzar API (Backend)
@@ -118,7 +118,7 @@ echo "---------------------------------------" >> "$LOG_UI"
 
 # Función de limpieza robusta
 cleanup() {
-    echo "🛑 Cerrando Fina Ergen y limpiando recursos..."
+    echo "🛑 Cerrando Fina Seinen y limpiando recursos..."
     
     # 1. Llamar al NUEVO Conserje de Python (Alternativa Superior)
     PYTHON_BIN="python3"

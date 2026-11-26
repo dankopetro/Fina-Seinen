@@ -4,7 +4,7 @@ import sys
 import os
 
 def enroll_finger(user="Administrador"):
-    print("\n👆 REGISTRO DE HUELLA DACTILAR - FINA ERGEN")
+    print("\n👆 REGISTRO DE HUELLA DACTILAR - FINA SEINEN")
     print(f"   Usuario: {user}")
     print("------------------------------------------")
     print("Siga las instrucciones en consola:\n")

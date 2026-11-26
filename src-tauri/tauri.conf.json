@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "Fina Seinen",
-  "version": "3.6.0",
-  "identifier": "com.admin.fina-ergen",
+  "version": "0.1.11",
+  "identifier": "com.dankopetro.fina-seinen",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "Fina Ergen",
+        "title": "Fina Seinen",
         "label": "main",
         "width": 1280,
         "height": 720,
@@ -55,7 +55,7 @@
     "category": "Utility",
     "publisher": "Danko Petro (Fina Community)",
     "copyright": "© Fina Open Source Project",
-    "shortDescription": "Fina Ergen AI Assistant",
+    "shortDescription": "Fina Seinen AI Assistant",
     "longDescription": "El Asistente de Voz Modular y Domótico para Linux con procesamiento local offline. Fina es capaz de controlar IoT, automatizar tareas y brindar asistencia guiada por comandos de voz.",
     "icon": [
       "icons/32x32.png",

@@ -1,4 +1,4 @@
-# 🛠️ Guía de Creación de Plugins para Fina Ergen
+# 🛠️ Guía de Creación de Plugins para Fina Seinen
 
 Crear un plugin para Fina es muy sencillo gracias a su arquitectura modular. Solo necesitas una carpeta con el nombre de tu plugin y dos archivos básicos.
 

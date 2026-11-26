@@ -1,4 +1,4 @@
-# 📋 Pendientes para Fina Ergen v3.5.5
+# 📋 Pendientes para Fina Seinen v3.5.5
 
 ## 🔐 1. Autorización en PCs sin huella digital (PRIORITARIO)
 

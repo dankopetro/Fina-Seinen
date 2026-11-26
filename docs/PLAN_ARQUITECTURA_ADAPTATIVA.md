@@ -1,4 +1,4 @@
-# Plan Maestro: Fina Ergen — Arquitectura Universal Adaptativa
+# Plan Maestro: Fina Seinen — Arquitectura Universal Adaptativa
 
 > **Objetivo:** Unificar las variantes *Principal* y *Lite* en **un único instalador universal** que funcione en cualquier PC o notebook (armada o de marca, en cualquier idioma y región), detectando automáticamente las capacidades reales del hardware al arrancar para elegir los motores más rápidos, livianos y precisos que esa máquina pueda ejecutar sin degradar la experiencia.
 
@@ -113,7 +113,7 @@ Para que funcione para **cualquier usuario del planeta**:
 
 ---
 
-## 6. Roadmap de Implementación (Para llevar a Fina-Ergen Principal / Nueva Versión)
+## 6. Roadmap de Implementación (Para llevar a Fina-Seinen Principal / Nueva Versión)
 
 ### Fase 1 — Baseline y Cimientos de Perfilado
 - [ ] Crear `hardware_profiler.py` con detección portable de CPU/SIMD/RAM/GPU/Batería/Display/Disco/Locale y persistencia en `~/.config/Fina/hardware_profile.json`.
@@ -151,7 +151,7 @@ Para que funcione para **cualquier usuario del planeta**:
 
 ## 7. Checklist Rápido para Migrar al Repositorio Principal
 
-Si llevás este plan a la carpeta principal de **Fina-Ergen** (o un nuevo repo/versión):
+Si llevás este plan a la carpeta principal de **Fina-Seinen** (o un nuevo repo/versión):
 1. Copiar [AGENTS.md](../AGENTS.md) y este archivo [docs/PLAN_ARQUITECTURA_ADAPTATIVA.md](PLAN_ARQUITECTURA_ADAPTATIVA.md).
 2. No duplicar repositorios ni ramas `lite` vs `full`: implementar `hardware_profiler.py` + adaptadores desde la Fase 1 sobre el repo unificado.
 3. Mantener intactos los contratos que consumen los plugins del Market ([plugin_manager.py](../plugin_manager.py), [fina_plugin_integration.py](../fina_plugin_integration.py), UDP `:13333` y API `:18000`) para no romper compatibilidad con extensiones existentes.

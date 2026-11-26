@@ -2,8 +2,8 @@ import os
 import subprocess
 import concurrent.futures
 
-image_dir = '/home/claudio/Imágenes/Fina Ergen Screen/'
-output_file = '/home/claudio/Descargas/Fina-Ergen/.local_lab/docs/ocr_results.txt'
+image_dir = '/home/claudio/Imágenes/Fina Seinen Screen/'
+output_file = '/home/claudio/Descargas/Fina-Seinen/.local_lab/docs/ocr_results.txt'
 
 def extract_text(i):
     img_path = os.path.join(image_dir, f"{i}.png")

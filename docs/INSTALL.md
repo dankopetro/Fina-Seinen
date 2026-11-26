@@ -144,7 +144,7 @@ Fina necesita un modelo para entender lo que dices. Descarga el modelo en españ
 1. **Enlace Directo**: [Download vosk-model-es-0.42.zip](https://alphacephei.com/vosk/models/vosk-model-es-0.42.zip) (~400MB)
 2. **Ubicación**: Debes descomprimirlo y renombrar la carpeta resultante a `vosk-model-es-0.42` dentro de la carpeta `model/`.
 
-Estructura requerida: `fina-ergen/model/vosk-model-es-0.42/`
+Estructura requerida: `fina-seinen/model/vosk-model-es-0.42/`
 
 ---
 

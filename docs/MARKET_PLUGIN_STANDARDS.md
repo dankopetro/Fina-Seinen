@@ -1,6 +1,6 @@
 # 🌌 Fina Plugins Market: Estándares de Desarrollo Universal
 
-Para que un plugin sea compatible con la interfaz "Zero-Config" de Fina Ergen, debe seguir esta estructura estrictamente. Esto permite que Fina localice automáticamente los scripts necesarios para los botones de la App sin importar el hardware del usuario.
+Para que un plugin sea compatible con la interfaz "Zero-Config" de Fina Seinen, debe seguir esta estructura estrictamente. Esto permite que Fina localice automáticamente los scripts necesarios para los botones de la App sin importar el hardware del usuario.
 
 ## 📂 Estructura de Directorios
 
@@ -143,4 +143,4 @@ intents:
 4.  **Velocidad**: Fina es un sistema de control rápido. Optimiza tus scripts (ADB, HTTP, etc.) para que respondan en menos de 2 segundos.
 
 ---
-*Fina Ergen - Documentación de Estándares para el Market (2026)*
+*Fina Seinen - Documentación de Estándares para el Market (2026)*

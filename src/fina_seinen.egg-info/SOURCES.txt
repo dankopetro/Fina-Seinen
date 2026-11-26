@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/fina_seinen.egg-info/PKG-INFO
+src/fina_seinen.egg-info/SOURCES.txt
+src/fina_seinen.egg-info/dependency_links.txt
+src/fina_seinen.egg-info/requires.txt
+src/fina_seinen.egg-info/top_level.txt

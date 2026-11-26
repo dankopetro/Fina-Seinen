@@ -1,4 +1,4 @@
-# 🚀 Fina Ergen - Release Notes v3.5.9-5
+# 🚀 Fina Seinen - Release Notes v3.5.9-5
 
 ## 🌟 Resumen
 Esta actualización se enfoca en la estabilidad del hardware (cámara), la fluidez de la interfaz y la corrección de errores críticos en el empaquetado para asegurar una experiencia perfecta tras la instalación del paquete `.deb`.
@@ -19,4 +19,4 @@ Esta actualización se enfoca en la estabilidad del hardware (cámara), la fluid
 
 ---
 Hecho con ❤️ en Argentina.
-#FinaErgen #AIAsistente #Domotica #Linux
+#FinaSeinen #AIAsistente #Domotica #Linux

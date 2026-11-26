@@ -6,7 +6,7 @@
 ### Nuevas Funciones (Features)
 - **Universal Mobile Hub**: Motor de autodescubrimiento de hardware. Fina ahora detecta automáticamente el protocolo de envío según el fabricante (Motorola, Samsung, etc.).
 - **Mensajería Screen-Off**: Envío de SMS mediante inyección Binder directa. Permite enviar mensajes sin encender la pantalla ni abrir la app de mensajes en el móvil.
-- **Identidad Ergen Consolidada**: Purga completa de referencias a "Phoenix" en el núcleo (incluyendo el sidecar binario de Tauri), unificando todo el proyecto bajo el ecosistema Ergen.
+- **Identidad Seinen Consolidada**: Purga completa de referencias a "Phoenix" en el núcleo (incluyendo el sidecar binario de Tauri), unificando todo el proyecto bajo el ecosistema Seinen.
 - **Manejo Inteligente de Espacios**: Los mensajes con espacios ahora se envían íntegros mediante el uso de argumentos atómicos en el comando `service call`.
 
 ### Correcciones (Bugfixes)
@@ -17,7 +17,7 @@
 ---
 
 ## [3.2.1] - 2026-02-14: Integración Móvil y Modal de Comunicación
-**Estado:** 🚀 Release (Ergen Upgrade)
+**Estado:** 🚀 Release (Seinen Upgrade)
 
 ### Nuevas Funciones (Features)
 - **Modal de Comunicación**: Nueva interfaz unificada para enviar SMS e iniciar llamadas sin salir de Fina.

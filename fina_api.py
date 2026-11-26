@@ -174,7 +174,7 @@ except Exception as e:
     print(f"❌ [CRITICAL] Error importando librerías API: {e}", flush=True)
     sys.exit(1)
 
-app = FastAPI(title="Fina API Ergen")
+app = FastAPI(title="Fina API Seinen")
 
 # --- CORS (CRÍTICO PARA TAURI/FETCH) ---
 # Permitimos TODO para evitar "Load Failed" en local

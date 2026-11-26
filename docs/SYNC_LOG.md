@@ -2,7 +2,7 @@
 
 **Date:** 2026-11-25
 
-The following files were synchronized from **Fina‑Ergen** to **Fina lite** to ensure functional parity:
+The following files were synchronized from **Fina‑Seinen** to **Fina lite** to ensure functional parity:
 
 - `auth/fingerprint_auth.py`
 - `auth/voice_auth.py`
@@ -11,6 +11,6 @@ The following files were synchronized from **Fina‑Ergen** to **Fina lite** to 
 - `requirements.txt`
 - `src/App.vue`
 
-All files now match the originals (verified with `diff -q`). No changes were made to the source `Fina‑Ergen` directory.
+All files now match the originals (verified with `diff -q`). No changes were made to the source `Fina‑Seinen` directory.
 
 *This log was generated automatically.*
