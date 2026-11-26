@@ -20,6 +20,35 @@
 
 ---
 
+## 🏗️ Construcción local de paquetes
+
+Para generar los instaladores sin publicar una release:
+
+```bash
+# 1. Instala dependencias del sistema
+sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.1-dev libappindicator3-dev \
+  librsvg2-dev patchelf libfuse2 desktop-file-utils libgdk-pixbuf2.0-dev
+
+# 2. Genera solo el .deb (recomendado)
+npm run tauri:deb
+# El .deb queda en: src-tauri/target/release/bundle/deb/
+
+# 3. Instala el .deb
+sudo dpkg -i src-tauri/target/release/bundle/deb/*.deb
+```
+
+## 🚀 Publicar una nueva release
+
+```bash
+git tag v0.X.Y
+git push origin v0.X.Y
+```
+
+GitHub Actions genera automáticamente el `.deb` y el `AppImage` sin usar `linuxdeploy`.
+Ver detalles en [AGENTS.md § 5.2](AGENTS.md).
+
+---
+
 **Fina Ergen** no es solo un script; es un cerebro avanzado que corre localmente en tu sistema Linux con una hermosa interfaz nativa de escritorio (Tauri/Vue). Diseñada para procesar lenguaje natural en español con extrema rapidez offline, Fina es capaz de todo: desde hablarte con voces hiperrealistas y autenticarte por biometría dual, hasta controlar toda la domótica de tu casa (Cámaras, Android TV, Aire Acondicionado) mediante su increíble arquitectura de plugins.
 
 <a id="caracteristicas"></a>
