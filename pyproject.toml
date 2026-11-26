@@ -1,0 +1,64 @@
+[project]
+name = "fina-seinen"
+version = "0.1.0"
+description = "Asistente de voz para Linux – versión modernizada"
+authors = [{name = "Claudio"}]
+license = {text = "Apache-2.0"}
+requires-python = ">=3.12"
+
+# Dependencias principales (convertidas de requirements.txt)
+# Nota: se han mantenido las mismas versiones que el proyecto original; después de crear el entorno con uv podrás ajustarlas.
+dependencies = [
+    "torch>=2.0.0",
+    "sentence-transformers",
+    "transformers",
+    "scikit-learn",
+    "numpy",
+    "vosk",
+    "openai-whisper",
+    "deep-translator",
+    "resemblyzer",
+    "face-recognition",
+    "sounddevice",
+    "soundfile",
+    "pydub",
+    "gTTS",
+    "pyttsx3",
+    "elevenlabs",
+    "psutil",
+    "pyautogui",
+    "keyboard",
+    "screen-brightness-control",
+    "python-dotenv",
+    "python-vlc",
+    "pyxdg",
+    "PyYAML",
+    "pydantic",
+    "google",
+    "googlesearch-python",
+    "duckduckgo-search",
+    "wikipedia-api",
+    "newsapi-python",
+    "geocoder",
+    "speedtest-cli",
+    "requests",
+    "aiohttp",
+    "beautifulsoup4",
+    "openai",
+    "pyjokes",
+    "colorama",
+    "markdown",
+    "pillow",
+    "pymupdf",
+    "pypdf",
+    "weasyprint",
+    "click",
+    "fastapi",
+    "uvicorn",
+    "yt-dlp",
+    "markdown2",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
