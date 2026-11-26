@@ -1,6 +1,6 @@
 <h1 align="center">
   <img src="static/assets/avatar.png" width="120" alt="Fina AI">
-  <br>Fina Ergen v3.6.0
+  <br>Fina Seinen v0.1.0
 </h1>
 
 <p align="center">

@@ -51,9 +51,9 @@ jobs:
           APPIMAGE_EXTRACT_AND_RUN: 1
         with:
           tagName: v__VERSION__
-          releaseName: "Fina Ergen v__VERSION__"
+          releaseName: "Fina Seinen v__VERSION__"
           releaseBody: |
-            ### 🚀 Fina Ergen v__VERSION__
+            ### 🚀 Fina Seinen v__VERSION__
             
             Esta actualización marca un salto importante en la madurez del asistente, con un enfoque en la expansión domótica universal y la modularidad del mercado de plugins.
             
@@ -66,7 +66,7 @@ jobs:
             *Consultar `docs/release_notes_v3_6_0.md` para el desglose detallado de esta versión.*
           releaseDraft: false
           prerelease: false
-          args: --bundles deb,rpm
+          args: --bundles deb,appimage
 
       - name: Build Patched AppImage (from Deb)
         run: |
