@@ -56,21 +56,10 @@ jobs:
             rm -rf piper piper.tar.gz
           fi
 
-      - name: Build & bundle (deb only)
-        uses: tauri-apps/tauri-action@v0.5.15
+      - name: Build deb package (no AppImage)
+        run: npm run tauri:deb
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tagName: v${{ github.ref_name }}
-          releaseName: "Fina Seinen v${{ github.ref_name }}"
-          releaseBody: |
-            ### 🚀 Fina Seinen v${{ github.ref_name }}
-
-            - Paquete **deb** listo para instalación local.
-            - El **AppImage** parcheado se genera a partir del .deb en el siguiente paso.
-          releaseDraft: false
-          prerelease: false
-          args: --bundles deb
 
       - name: Extract deb and build patched AppImage
         id: appimage
