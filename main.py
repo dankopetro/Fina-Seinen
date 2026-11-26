@@ -297,7 +297,7 @@ async def resolve_contact_proactive(query, contacts, voice_model, model_for_list
     return None, None
 
 # --- Metadata del Sistema ---
-FINA_VERSION = "Fina Seinen v0.1.11"
+FINA_VERSION = "Fina Seinen v0.1.12"
 FINA_AUTHOR = "Dankopetro"
 FINA_CREATED = "el 04 de Marzo de 2026 a las 12:15"
 

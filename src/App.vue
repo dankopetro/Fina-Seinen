@@ -201,7 +201,7 @@ const activeTvRoom = ref('Living');
 const roomList = ['Dormitorio', 'Living', 'Comedor', 'Cocina', 'Cobertizo', 'Deco'];
 const activeBioTab = ref('huella');
 const activeCameraView = ref('grid');
-const version = "Fina Seinen v0.1.11 (26/11/2026)";
+const version = "Fina Seinen v0.1.12 (26/11/2026)";
 const buildDate = "Vie 13 Mar 2026 13:30";
 
 const showOptInModal = ref(false);

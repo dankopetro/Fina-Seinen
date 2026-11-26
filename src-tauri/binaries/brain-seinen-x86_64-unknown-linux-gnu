@@ -1,0 +1,283 @@
+#!/bin/bash
+# Brain Sidecar - Fina Seinen v0.1.12
+# GESTIÓN UNIVERSAL DE ENTORNO Y PROCESOS [EDICIÓN RECONSTRUCCIÓN FINAL]
+
+# 1. Rutas Base y Logging
+# Resolvemos el path real del script para evitar problemas de symlinks en /usr/bin
+REAL_SCRIPT_PATH="$(readlink -f "$0")"
+SCRIPT_DIR="$(cd "$(dirname "$REAL_SCRIPT_PATH")" && pwd)"
+LOG_DIR="$HOME/.config/Fina/Logs"
+mkdir -p "$LOG_DIR"
+BOOT_LOG="$LOG_DIR/boot_wrapper.log"
+
+# Redirigir todo al log para diagnóstico (stdout + stderr)
+exec > >(tee -a "$BOOT_LOG") 2>&1
+echo "--- [BOOT WRAPPER START] $(date) ---"
+echo "📍 REAL_SCRIPT_PATH: $REAL_SCRIPT_PATH"
+echo "📍 SCRIPT_DIR detectado: $SCRIPT_DIR"
+echo "👤 USER: $(whoami)"
+echo "🏠 HOME: $HOME"
+echo "🔍 PWD: $(pwd)"
+
+# 2. Búsqueda Exhaustiva de la Raíz del Proyecto (main.py)
+SEINEN_ROOT=""
+
+# Lista de búsqueda táctica TOTAL:
+search_paths=(
+    "$SCRIPT_DIR/_up_"              # Relativo al sidecar en /usr/lib/fina-seinen/
+    "$SCRIPT_DIR/../_up_"           # Relativo al sidecar en /usr/lib/fina-seinen/binaries/
+    "$SCRIPT_DIR/.."                # Tauri Resources standard
+    "$SCRIPT_DIR/../../.."          # Development (src-tauri/binaries -> project_root)
+    "$SCRIPT_DIR/../lib/fina-seinen/_up_" # AppImage Resource path (Tauri v2)
+    "$SCRIPT_DIR/../lib/fina-seinen"      # AppImage Alternative
+    "$SCRIPT_DIR/../lib/Fina Seinen/_up_" # AppImage ProductName path
+    "$SCRIPT_DIR/../lib/Fina Seinen"      # AppImage ProductName Alternative
+    "$SCRIPT_DIR/../share/fina-seinen/_up_" # AppImage Share path
+    "$SCRIPT_DIR/../share/fina-seinen"      # AppImage Share Alternative
+    "/usr/lib/fina-seinen/_up_"      # Ruta absoluta estándar DEB (Fina Resources)
+    "/usr/lib/fina-seinen"           # Ruta absoluta alternativa
+    "/usr/lib/Fina Seinen/_up_"      # Ruta absoluta DEB ProductName
+    "/usr/lib/Fina Seinen"           # Ruta absoluta DEB ProductName alternativa
+    "/usr/share/fina-seinen/_up_"    # Ruta absoluta estándar RPM
+    "/usr/share/fina-seinen"         # Ruta absoluta alternativa RPM
+    "/opt/fina-seinen/_up_"          # Otras instalaciones
+    "/usr/lib/Fina-Seinen/_up_"
+    "/usr/lib/Fina-Seinen"
+    "/usr/share/Fina-Seinen/_up_"
+    "/usr/share/Fina-Seinen"
+    "/opt/Fina-Seinen/_up_"
+    "$(pwd)"                        # Fallback local
+)
+
+echo "🔍 Buscando archivos core (fina_api.py / main.py)..."
+for path in "${search_paths[@]}"; do
+    ABS_PATH="$(realpath "$path" 2>/dev/null)"
+    if [ -n "$ABS_PATH" ] && [ -f "$ABS_PATH/main.py" ] && [ -f "$ABS_PATH/fina_api.py" ]; then
+        SEINEN_ROOT="$ABS_PATH"
+        echo "✅ Raíz encontrada exitosamente en: $SEINEN_ROOT"
+        break
+    fi
+done
+
+if [ -z "$SEINEN_ROOT" ]; then
+    echo "❌ ERROR FATAL: No se pudo localizar la instalación de Fina."
+    echo "Faltan main.py y fina_api.py en los directorios de recursos."
+    echo "Rutas exploradas:"
+    for p in "${search_paths[@]}"; do echo "  - $p"; done
+    exit 1
+fi
+
+# 3. Preparación de Python (Aislamiento de Distro)
+PYTHON_SYSTEM=""
+for py in "python3" "python" "python3.12" "python3.11" "python3.10"; do
+    if command -v "$py" >/dev/null 2>&1; then
+        PYTHON_SYSTEM="$(command -v "$py")"
+        break
+    fi
+done
+
+[ -z "$PYTHON_SYSTEM" ] && echo "❌ ERROR: Python no encontrado." && exit 1
+echo "🐍 Python sistema: $PYTHON_SYSTEM"
+
+USER_VENV="$HOME/.config/Fina/venv"
+PYTHON_BIN=""
+
+# 4. Gestión de VENV e Instalación VISIBLE
+USER_VENV=""
+
+# 4.1 Buscar en subcarpetas locales comunes en SEINEN_ROOT
+for env_name in "venv" ".venv" "env" ".env"; do
+    if [ -f "$SEINEN_ROOT/$env_name/bin/python3" ]; then
+        USER_VENV="$SEINEN_ROOT/$env_name"
+        echo "🐍 [ENCONTRADO] Entorno Virtual '$env_name' detectado en proyecto."
+        break
+    fi
+done
+# 4.2 Buscar en subcarpetas globales de usuario (prioridad)
+if [ -z "$USER_VENV" ]; then
+    for env_name in "venv" ".venv" "env" ".env"; do
+        if [ -f "$HOME/$env_name/bin/python3" ]; then
+            USER_VENV="$HOME/$env_name"
+            echo "🐍 [ENCONTRADO] Entorno Virtual '$env_name' global detectado en $HOME."
+            break
+        fi
+    done
+fi
+# Default fallback
+if [ -z "$USER_VENV" ]; then
+    USER_VENV="$HOME/.config/Fina/venv"
+fi
+PYTHON_BIN="$USER_VENV/bin/python3"
+
+# Si no existe el VENV, informamos al usuario con una ventana (si hay zenity)
+NEEDS_INSTALL=0
+if [ ! -d "$USER_VENV" ] || [ ! -f "$PYTHON_BIN" ]; then
+    NEEDS_INSTALL=1
+elif ! "$PYTHON_BIN" -c "import fastapi, uvicorn, requests, pydantic, resemblyzer" >/dev/null 2>&1; then
+    NEEDS_INSTALL=1
+fi
+
+# DETERMINAR IDIOMA DEL SISTEMA
+SYS_LANG="${LANG:0:2}"
+if [ "$SYS_LANG" = "es" ]; then
+    MSG_INFO_TITLE="Fina Seinen - ¡Primer Contacto!"
+    MSG_INFO_TEXT="Fina está construyendo su cerebro para adaptarse a esta computadora.\n\n⚠️ ¡ATENCIÓN!\nEste proceso puede parecer CONGELADO durante 10 a 20 minutos más adelante (estará compilando en profundo).\n\nPor favor, NO CIERRES NINGUNA VENTANA aunque veas que la barra de progreso no avanza. ¡Prepará un café ☕ mientras espero!"
+    MSG_PROG_TITLE="Instalador de Fina Seinen"
+    MSG_PROG_TEXT="Iniciando configuración inicial..."
+    MSG_STEP_1="# Actualizando herramientas base de Python..."
+    MSG_STEP_2="# Descargando servicios y drivers..."
+    MSG_STEP_3="# Instalando motores IA (PyTorch / Resemblyzer)..."
+    MSG_STEP_4="# ⚙️ ADAPTACIÓN A TU PC: COMPILANDO C++ (ESTO PUEDE TARDAR HASTA 20 MINUTOS)..."
+    MSG_STEP_FIN="# ¡Todo listo! Despertando el núcleo..."
+else
+    MSG_INFO_TITLE="Fina Seinen - First Contact!"
+    MSG_INFO_TEXT="Fina is building its brain to adapt to this computer.\n\n⚠️ ATTENTION!\nThis process may appear FROZEN for 10 to 20 minutes later on (deep compilation in progress).\n\nPlease DO NOT CLOSE ANY WINDOWS even if the progress bar doesn't advance. Brew some coffee ☕ while I wait!"
+    MSG_PROG_TITLE="Fina Seinen Installer"
+    MSG_PROG_TEXT="Starting initial configuration..."
+    MSG_STEP_1="# Updating base Python tools..."
+    MSG_STEP_2="# Downloading services and drivers..."
+    MSG_STEP_3="# Installing AI engines (PyTorch / Resemblyzer)..."
+    MSG_STEP_4="# ⚙️ ADAPTING TO YOUR PC: COMPILING C++ (THIS MAY TAKE UP TO 20 MINUTES)..."
+    MSG_STEP_FIN="# All set! Waking up the core..."
+fi
+
+if [ ! -f "$PYTHON_BIN" ]; then
+    if command -v zenity >/dev/null 2>&1 && [ "$NEEDS_INSTALL" -eq 1 ]; then
+        zenity --info --title="$MSG_INFO_TITLE" --text="$MSG_INFO_TEXT" --width=550 &
+    fi
+    
+    echo "🛠️ Creando VENV en $USER_VENV..."
+    "$PYTHON_SYSTEM" -m venv "$USER_VENV" --system-site-packages || "$PYTHON_SYSTEM" -m venv "$USER_VENV"
+fi
+
+if [ -f "$PYTHON_BIN" ]; then
+    # Chequeo inteligente: ¿Están instaladas las dependencias básicas?
+    NEEDS_INSTALL=0
+    if ! "$PYTHON_BIN" -c "import fastapi, uvicorn, requests, pydantic, resemblyzer" >/dev/null 2>&1; then
+        NEEDS_INSTALL=1
+    fi
+
+    if [ "$NEEDS_INSTALL" -eq 1 ]; then
+        # Instalación con Barra de Progreso si zenity existe
+        if command -v zenity >/dev/null 2>&1 && [ ! -f "$HOME/.config/Fina/.installed" ] && [ "$NEEDS_INSTALL" -eq 1 ]; then
+            echo "📦 Instalando componentes pesados (Torch, Resemblyzer)..."
+            (
+                echo "$MSG_STEP_1"; echo "10"
+                "$PYTHON_BIN" -m pip install --upgrade pip >/dev/null 2>&1
+                
+                echo "$MSG_STEP_2"; echo "30"
+                "$PYTHON_BIN" -m pip install fastapi uvicorn requests psutil numpy sounddevice soundfile >/dev/null 2>&1
+                
+                echo "$MSG_STEP_3"; echo "60"
+                "$PYTHON_BIN" -m pip install resemblyzer torch --extra-index-url https://download.pytorch.org/whl/cpu >/dev/null 2>&1
+                
+                echo "$MSG_STEP_4"; echo "70"
+                "$PYTHON_BIN" -m pip install -r "$SEINEN_ROOT/requirements.txt" >/dev/null 2>&1 &
+                PIP_PID=$!
+                
+                # Bucle para simular progreso para usuarios ansiosos
+                prog=70
+                while kill -0 $PIP_PID 2>/dev/null; do
+                    sleep 15
+                    if [ $prog -lt 99 ]; then
+                        prog=$((prog + 1))
+                        echo "$prog"
+                        if [ "$SYS_LANG" = "es" ]; then
+                            echo "# ⚙️ Construyendo piezas internas para el hardware ($prog%)... ¡Paciencia, no me cierres!"
+                        else
+                            echo "# ⚙️ Building internal pieces for hardware ($prog%)... Patience, don't close me!"
+                        fi
+                    fi
+                done
+                wait $PIP_PID
+                
+                touch "$HOME/.config/Fina/.installed"
+                echo "$MSG_STEP_FIN"; echo "100"
+                sleep 2
+            ) | zenity --progress --title="$MSG_PROG_TITLE" --text="$MSG_PROG_TEXT" --percentage=0 --auto-close
+        else
+            # Instalación silenciosa
+            echo "📦 Instalando dependencias silenciosamente..."
+            "$PYTHON_BIN" -m pip install -r "$SEINEN_ROOT/requirements.txt" --quiet >/dev/null 2>&1 || true
+            touch "$HOME/.config/Fina/.installed"
+        fi
+    else
+        echo "✅ Dependencias de Python detectadas OK, saltando instalación redundante."
+    fi
+else
+    PYTHON_BIN="$PYTHON_SYSTEM"
+fi
+
+echo "🚀 Usando entorno: $PYTHON_BIN"
+
+# 4. Limpieza de Seguridad INTELIGENTE (Puerto 18000)
+# Usamos el 18000 para evitar conflictos con otras Apps que usen el 8000 (Django/FastAPI)
+echo "🧹 Limpiando procesos previos de Fina..."
+pkill -9 -f "fina_api.py" >/dev/null 2>&1
+pkill -9 -f "main.py" >/dev/null 2>&1
+pkill -9 -f "monitor_seinen.py" >/dev/null 2>&1
+
+# Solo matamos lo que esté en el 18000 si es necesario
+for i in {1..2}; do
+    if command -v ss >/dev/null 2>&1; then ss -tlnp 'sport = :18000' | grep -oP 'pid=\K\d+' | xargs -r kill -9 >/dev/null 2>&1; fi
+    if command -v fuser >/dev/null 2>&1; then fuser -k -9 18000/tcp >/dev/null 2>&1; fi
+    sleep 0.3
+done
+
+# 5. Migración de Configuración y Permisos
+if [ ! -f "$HOME/.config/Fina/settings.json" ] && [ -f "$SEINEN_ROOT/fina_settings.json" ]; then
+    echo "📄 Migrando settings.json inicial..."
+    cp "$SEINEN_ROOT/fina_settings.json" "$HOME/.config/Fina/settings.json"
+fi
+
+# DIAGNÓSTICO: Ver qué hay realmente en la raíz
+echo "🔍 Listado de archivos en Raíz ($SEINEN_ROOT):"
+ls -F "$SEINEN_ROOT" | head -n 30
+
+if [ -d "$SEINEN_ROOT/plugins" ]; then
+    echo "🔍 Listado de Plugins detectados en resources:"
+    ls -F "$SEINEN_ROOT/plugins"
+fi
+
+# Asegurar permisos de ejecución en binarios críticos dentro de recursos
+echo "🔑 Asegurando permisos de ejecución..."
+# Buscar Piper en múltiples profundidades posibles por si Tauri cambió la estructura
+PIPER_LOCS=(
+    "$SEINEN_ROOT/binaries/piper/piper"
+    "$SEINEN_ROOT/binaries/piper-x86_64-unknown-linux-gnu"
+    "$SEINEN_ROOT/bin/piper"
+    "$SEINEN_ROOT/piper"
+    "$SEINEN_ROOT/piper-x86_64-unknown-linux-gnu"
+    "$(find "$SEINEN_ROOT" -name "piper*" -type f 2>/dev/null | head -n 3)"
+)
+
+for LOC in "${PIPER_LOCS[@]}"; do
+    if [ -f "$LOC" ]; then
+        echo "✅ Habilitando ejecución: $LOC"
+        chmod +x "$LOC" 2>/dev/null || true
+    fi
+done
+
+chmod +x "$SEINEN_ROOT/fina_api.py" "$SEINEN_ROOT/main.py" 2>/dev/null || true
+
+# 6. Lanzamiento
+cd "$SEINEN_ROOT"
+export PYTHONUNBUFFERED=1
+export PYTHONPATH="$SEINEN_ROOT"
+
+echo "🔌 Backend API..."
+"$PYTHON_BIN" fina_api.py > "$LOG_DIR/api_services.log" 2>&1 &
+API_PID=$!
+
+sleep 2
+
+cleanup() {
+    echo "🛑 Deteniendo todo..."
+    kill $API_PID 2>/dev/null
+    pkill -P $$ 2>/dev/null
+    exit 0
+}
+trap cleanup EXIT INT TERM
+
+echo "🧠 CEREBRO FINA..."
+exec "$PYTHON_BIN" main.py

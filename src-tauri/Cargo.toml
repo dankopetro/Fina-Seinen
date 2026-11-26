@@ -1,6 +1,6 @@
 [package]
 name = "fina-seinen"
-version = "0.1.11"
+version = "0.1.12"
 description = "El Asistente de Voz Modular y Domótico para Linux"
 authors = ["Danko Petro <fina.assistant@proton.me>"]
 repository = "https://github.com/dankopetro/Fina-Seinen"

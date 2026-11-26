@@ -335,13 +335,13 @@ pub fn run() {
                 });
             let _ = create_dir_all(&config_dir);
 
-            // --- LANZAR SIDECAR 'BRAIN' (Gestor Universal) ---
-            // El Sidecar 'brain' se encarga de crear el venv, instalar dependencias,
+            // --- LANZAR SIDECAR 'BRAIN-SEINEN' (Gestor Universal) ---
+            // El Sidecar 'brain-seinen' se encarga de crear el venv, instalar dependencias,
             # [cfg(not(mobile))]
             {
                 use tauri_plugin_shell::ShellExt;
-                println!("[RUST] Lanzando Sidecar Universal 'brain'...");
-                let sidecar = app.shell().sidecar("brain")
+                println!("[RUST] Lanzando Sidecar Universal 'brain-seinen'...");
+                let sidecar = app.shell().sidecar("brain-seinen")
                     .map_err(|e| {
                         println!("[RUST] ❌ Error preparando sidecar: {}", e);
                         e
@@ -353,7 +353,7 @@ pub fn run() {
                         e
                     })?;
                 
-                println!("[RUST] Sidecar brain iniciado exitosamente.");
+                println!("[RUST] Sidecar brain-seinen iniciado exitosamente.");
             }
 
             Ok(())

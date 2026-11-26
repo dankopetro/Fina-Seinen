@@ -83,7 +83,7 @@ jobs:
 
           TAG_VER="${GITHUB_REF_NAME}"
           if [[ ! "$TAG_VER" =~ ^v ]]; then
-            TAG_VER="v0.1.11-manual-${GITHUB_RUN_NUMBER}"
+            TAG_VER="v0.1.12-manual-${GITHUB_RUN_NUMBER}"
           fi
           APPIMAGE_NAME="Fina-Seinen_${TAG_VER}_patched_amd64.AppImage"
 
